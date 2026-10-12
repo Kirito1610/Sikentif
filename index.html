@@ -1,0 +1,1875 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sikentif Hospital</title>
+<meta name="description" content="Sikentif Hospital (مستشفى سيكنتيف) is an upcoming private hospital being developed in Riyadh, Saudi Arabia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@500;600;700&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --green:#123F38; --green-dk:#0C2E29; --clay:#A8653B; --clay-dk:#8A4F2B; --gold:#C8A24A;
+  --sand:#F4ECE0; --sand-lt:#FAF6EF; --lime:#E3D8C6; --basalt:#1F1C19; --muted:#5B544B;
+  --line:#DCCFBB; --white:#FFFDF9;
+  --disp:"Cormorant",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --disp-ar:"Noto Kufi Arabic","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --body-ar:"IBM Plex Sans Arabic","Noto Sans Arabic",Tahoma,sans-serif;
+  --gutter:clamp(16px,4vw,40px);
+  --max:1200px;
+  --cren-green:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12'%3E%3Cpath d='M2 12V8h4V4h4V0h4v4h4v4h4v4z' fill='%23123F38'/%3E%3C/svg%3E");
+  --cren-lime:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12'%3E%3Cpath d='M2 12V8h4V4h4V0h4v4h4v4h4v4z' fill='%23E3D8C6'/%3E%3C/svg%3E");
+  --cren-sand:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12'%3E%3Cpath d='M2 12V8h4V4h4V0h4v4h4v4h4v4z' fill='%23F4ECE0'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+.skip{position:absolute;inset-inline-start:12px;top:-60px;z-index:100;background:var(--green);color:var(--sand);padding:.6rem 1rem;border-radius:2px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.lang-switch{display:inline-flex;align-items:stretch;direction:ltr;border:1px solid var(--green);border-radius:2px;overflow:hidden;flex:none}
+.lang-switch button{font:600 .84rem var(--body);background:transparent;border:0;color:var(--green);padding:.45rem .7rem;cursor:pointer;line-height:1.2}
+.lang-switch button[lang="ar"]{font-family:var(--body-ar)}
+.lang-switch button[aria-pressed="true"]{background:var(--green);color:var(--sand)}
+.lang-switch .bar{width:1px;background:var(--green);opacity:.4}
+.footer .lang-switch{border-color:var(--sand)}
+.footer .lang-switch button{color:var(--sand)}
+.footer .lang-switch button[aria-pressed="true"]{background:var(--sand);color:var(--green)}
+.footer .lang-switch .bar{background:var(--sand)}
+#app[dir="rtl"] input[dir="ltr"]{text-align:right}
+.lockup{direction:ltr}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--sand);color:var(--basalt);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{max-width:100%}
+h1,h2,h3,h4,p{margin:0}
+h1,h2,h3{color:var(--green);text-wrap:balance}
+h1,h2{font-family:var(--disp);font-weight:600;letter-spacing:-.005em}
+h1{font-size:clamp(2.5rem,5.6vw,4.2rem);line-height:1.03}
+h2{font-size:clamp(1.9rem,3.8vw,2.8rem);line-height:1.08}
+h3{font-size:1.05rem;font-weight:600;line-height:1.35}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--clay-dk)}
+.lede{font-size:1.08rem;color:var(--muted);max-width:62ch}
+.muted{color:var(--muted)}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+bdi{unicode-bidi:isolate}
+
+/* ---------- Arabic / RTL ---------- */
+#app[dir="rtl"]{font-family:var(--body-ar);line-height:1.85}
+#app[dir="rtl"] h1,#app[dir="rtl"] h2{font-family:var(--disp-ar);font-weight:700;letter-spacing:0}
+#app[dir="rtl"] h1{font-size:clamp(1.9rem,4.2vw,3rem);line-height:1.5}
+#app[dir="rtl"] h2{font-size:clamp(1.5rem,2.9vw,2.2rem);line-height:1.5}
+#app[dir="rtl"] h3{font-size:1.08rem}
+#app[dir="rtl"] .eyebrow,#app[dir="rtl"] .tag-cl,#app[dir="rtl"] .st,#app[dir="rtl"] .cat-head h3,#app[dir="rtl"] .mini-h,#app[dir="rtl"] .info-block small,#app[dir="rtl"] .stage small,#app[dir="rtl"] .scr-top small,#app[dir="rtl"] .fact small{letter-spacing:0;text-transform:none}
+#app[dir="rtl"] .eyebrow{font-size:.86rem}
+#app[dir="rtl"] .flip{transform:scaleX(-1)}
+#app[dir="rtl"] .btn,#app[dir="rtl"] input,#app[dir="rtl"] select,#app[dir="rtl"] textarea,#app[dir="rtl"] button{font-family:var(--body-ar)}
+.ar-font{font-family:var(--body-ar)}
+.disp-font{font-family:var(--disp);font-weight:600}
+#app[dir="rtl"] .disp-font{font-family:var(--disp-ar);font-weight:700}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.3rem;border-radius:2px;font:600 .94rem/1.2 var(--body);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn .ic{width:18px;height:18px}
+.btn-primary{background:var(--green);color:var(--sand)}
+.btn-primary:hover{background:var(--green-dk)}
+.btn-clay{border-color:var(--clay);color:var(--clay-dk);background:transparent}
+.btn-clay:hover{background:var(--clay);color:var(--sand)}
+.btn-gold{background:var(--gold);color:var(--basalt)}
+.btn-gold:hover{background:#D6B45F}
+.btn-sand-line{border-color:rgba(244,236,224,.5);color:var(--sand);background:transparent}
+.btn-sand-line:hover{border-color:var(--sand);background:rgba(244,236,224,.08)}
+.btn-lg{padding:1rem 1.6rem;font-size:1rem}
+.link-arrow{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;color:var(--clay-dk);text-decoration:none;border-bottom:1px solid transparent}
+.link-arrow:hover{border-color:var(--clay)}
+.link-arrow .ic{width:16px;height:16px}
+
+/* Status chips */
+.st{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .6rem;border-radius:2px;white-space:nowrap}
+.st::before{content:"";width:6px;height:6px}
+.st.confirmed{color:var(--green);border:1px solid var(--green)}
+.st.confirmed::before{background:var(--green)}
+.st.planned{color:var(--clay-dk);border:1px solid var(--clay)}
+.st.planned::before{background:var(--clay);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.st.future{color:var(--muted);border:1px dashed var(--muted)}
+.st.future::before{border:1px solid var(--muted);border-radius:50%}
+#app[dir="rtl"] .st{font-size:.78rem}
+
+/* ---------- Announce + header ---------- */
+.announce{background:var(--green);color:var(--sand);font-size:.88rem}
+.announce .wrap{display:flex;justify-content:center;align-items:center;gap:.4rem 1rem;padding-block:.55rem;flex-wrap:wrap;text-align:center}
+.announce .sep{width:1px;height:14px;background:var(--gold);opacity:.7}
+.announce .ar-font{font-weight:500}
+.announce a{color:var(--gold);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(200,162,74,.5);white-space:nowrap}
+@media (max-width:640px){.announce .sep{display:none}.announce .wrap{flex-direction:column;gap:.15rem}}
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(244,236,224,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--clay)}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.7rem}
+.lockup{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--green);flex:none}
+.lockup svg{width:40px;height:40px;flex:none}
+.lk-en{font-family:var(--body);font-weight:600;font-size:.84rem;letter-spacing:.2em;line-height:1.2;text-transform:uppercase;direction:ltr}
+.lk-en small{display:block;font-size:.58rem;letter-spacing:.38em;font-weight:500;color:var(--clay-dk)}
+.lk-ar{font-family:var(--disp-ar);font-weight:700;font-size:1.02rem;line-height:1.3;white-space:nowrap;direction:rtl}
+.lk-div{width:1px;align-self:stretch;background:currentColor;opacity:.25}
+.utility{display:flex;align-items:center;gap:.4rem 1rem;flex-wrap:wrap}
+.utility a.u{font-size:.84rem;font-weight:500;text-decoration:none;color:var(--green);display:inline-flex;align-items:center;gap:.35rem}
+.utility a.u:hover{color:var(--clay-dk)}
+.utility a.u .ic{width:16px;height:16px;color:var(--clay)}
+.lang-btn{font:600 .85rem var(--body);background:transparent;border:1px solid var(--green);color:var(--green);border-radius:2px;padding:.5rem .8rem;cursor:pointer;white-space:nowrap}
+.lang-btn:hover{background:var(--green);color:var(--sand)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:2px;padding:.45rem;cursor:pointer;color:var(--green)}
+.nav-row{border-top:1px solid var(--line)}
+.nav-row .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav{display:flex;gap:.1rem;flex-wrap:wrap;padding-block:.2rem}
+.nav a{font-size:.94rem;font-weight:500;color:var(--basalt);text-decoration:none;padding:.6rem .85rem;border-bottom:2px solid transparent}
+.nav a:first-child{margin-inline-start:-.85rem}
+.nav a:hover{color:var(--green);border-bottom-color:var(--lime)}
+.nav a[aria-current="page"]{color:var(--green);border-bottom-color:var(--clay)}
+.nav-cta{padding:.6rem 1rem;font-size:.86rem}
+.mobile-nav{display:none;border-top:1px solid var(--line);background:var(--sand)}
+.mobile-nav nav{display:grid;padding-block:.5rem 1rem}
+.mobile-nav a{padding:.75rem 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:500}
+.mobile-nav .btn{margin-top:1rem;justify-content:center;border-bottom:0}
+@media (max-width:1024px){.nav-row{display:none}.menu-btn{display:inline-flex}.mobile-nav.open{display:block}.utility a.u{display:none}}
+@media (max-width:460px){.site-header .lk-div{display:none}.site-header .lockup{gap:7px}.lockup svg{width:32px;height:32px}.lk-en{font-size:.68rem;letter-spacing:.14em}.lk-ar{font-size:.86rem}.lang-switch button{padding:.4rem .5rem;font-size:.78rem}.utility{gap:.4rem}}
+@media (max-width:460px){.site-header .lk-en{display:none}.utility{flex-wrap:nowrap}}
+
+/* ---------- Layout helpers ---------- */
+section{scroll-margin-top:130px}
+.section{padding-block:clamp(60px,8vw,104px)}
+.section.lt{background:var(--sand-lt)}
+.section.tight{padding-block:clamp(44px,6vw,72px)}
+.section-head{display:grid;gap:.9rem;margin-bottom:clamp(28px,4vw,48px);max-width:780px;justify-items:start}
+.head-split{display:flex;justify-content:space-between;align-items:end;gap:1rem 2rem;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,48px)}
+.head-split .section-head{margin-bottom:0}
+.cren-top{position:relative}
+.cren-top::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px;background:var(--cren-green) repeat-x;background-size:24px 12px}
+.cren-top.lime::before{background-image:var(--cren-lime)}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+@media (max-width:980px){.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.grid-4,.grid-3,.grid-2{grid-template-columns:1fr}}
+
+/* Cards */
+.card{background:var(--lime);border-radius:2px;padding:1.5rem;display:grid;gap:.7rem;align-content:start;position:relative}
+.card::after{content:"";position:absolute;top:0;inset-inline-end:0;width:18px;height:18px;background:var(--bg-behind,var(--sand));clip-path:polygon(0 0,100% 0,100% 100%,66% 100%,66% 66%,33% 66%,33% 33%,0 33%)}
+#app[dir="rtl"] .card::after{clip-path:polygon(0 0,100% 0,100% 33%,66% 33%,66% 66%,33% 66%,33% 100%,0 100%)}
+.card .ic{color:var(--clay-dk);width:28px;height:28px;stroke-width:1.4}
+.card p{color:var(--muted);font-size:.95rem}
+.lt .card{--bg-behind:var(--sand-lt)}
+.card.plain{background:var(--white);border:1px solid var(--line)}
+.card.plain::after{display:none}
+.card .card-top{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+
+/* ---------- Page hero (subpages) ---------- */
+.page-hero{background:var(--green);color:var(--lime);padding-block:clamp(48px,6vw,84px) clamp(56px,7vw,92px);position:relative}
+.page-hero::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px;background:var(--cren-green) repeat-x;background-size:24px 12px;transform:scaleY(-1)}
+.page-hero .eyebrow{color:var(--gold)}
+.page-hero h1{color:var(--sand);margin-top:.7rem;font-size:clamp(2.2rem,5vw,3.6rem)}
+#app[dir="rtl"] .page-hero h1{font-size:clamp(1.8rem,3.8vw,2.7rem)}
+.page-hero p{margin-top:1rem;font-size:1.08rem;max-width:64ch;color:var(--sand);opacity:.9}
+.page-hero .st{white-space:normal;margin-top:1.2rem;color:var(--gold);border-color:var(--gold)}
+.page-hero .st::before{background:var(--gold)}
+.subnav{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1.6rem}
+.subnav a{font-size:.84rem;color:var(--sand);text-decoration:none;border:1px solid rgba(244,236,224,.35);padding:.4rem .75rem;border-radius:2px}
+.subnav a:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ---------- Home: hero ---------- */
+.hero{padding-block:clamp(40px,6vw,72px) clamp(56px,7vw,96px)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.02fr;gap:clamp(32px,5vw,64px);align-items:center}
+.hero .lede{margin-top:1.3rem}
+.hero-ctas{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.8rem}
+.hero-links{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:1.2rem;font-size:.92rem}
+.stages{margin-top:2rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;max-width:560px}
+.stage{display:grid;gap:.45rem;align-content:start}
+.stage i{height:6px;background:var(--lime)}
+.stage.done i{background:var(--green)}
+.stage.current i{background:var(--clay)}
+.stage b{font-size:.84rem;font-weight:600;color:var(--muted);line-height:1.3}
+.stage.current b,.stage.done b{color:var(--green)}
+.stage small{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--clay-dk);font-weight:600;min-height:1em}
+.stage-note{margin-top:.9rem;font-size:.88rem;color:var(--muted)}
+.stage-note b{color:var(--green)}
+.visual{position:relative;margin:0}
+.visual .frame{position:relative;overflow:hidden;clip-path:polygon(0 18px,4% 18px,4% 12px,8% 12px,8% 6px,12% 6px,12% 0,88% 0,88% 6px,92% 6px,92% 12px,96% 12px,96% 18px,100% 18px,100% 100%,0 100%)}
+.visual svg{display:block;width:100%;height:auto}
+.visual-cap{position:absolute;inset-inline-start:14px;bottom:14px;font-size:.72rem;color:var(--basalt);background:rgba(244,236,224,.92);padding:.35rem .6rem;border-radius:2px}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.stages{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:.9rem}}
+
+/* What is */
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--green)}
+.fact{padding:1.6rem 1.4rem 1.6rem 0;display:grid;gap:.5rem;align-content:start;border-inline-end:1px solid var(--line);padding-inline:0 1.4rem}
+.fact+.fact{padding-inline-start:1.4rem}
+.fact:last-child{border-inline-end:0}
+.fact small{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--clay-dk)}
+.fact p{font-size:1.18rem;line-height:1.45;color:var(--green);font-family:var(--disp);font-weight:600}
+#app[dir="rtl"] .fact p{font-family:var(--body-ar);font-weight:500;font-size:1.05rem;line-height:1.8}
+.vision-line{margin-top:1.8rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.vision-line p{font-size:1rem;color:var(--muted);max-width:60ch}
+@media (max-width:760px){.facts{grid-template-columns:1fr}.fact,.fact+.fact{padding-inline:0;border-inline-end:0;border-bottom:1px solid var(--line)}}
+
+/* Specialty strip */
+.spec-strip{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.4rem;align-items:center}
+.spec-strip span{font-size:.86rem;padding:.35rem .7rem;border:1px solid var(--line);background:var(--white);border-radius:2px;color:var(--green)}
+.spec-strip b{font-size:.8rem;color:var(--muted);font-weight:600;margin-inline-end:.4rem}
+.foot-line{margin-top:1.4rem;font-size:.9rem;color:var(--muted);display:flex;gap:.5rem;align-items:flex-start}
+.foot-line .ic{width:18px;height:18px;color:var(--clay);margin-top:3px}
+.row-ctas{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.8rem;align-items:center}
+
+/* Journey */
+.journey{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 1.05fr;gap:0;border-top:1px solid var(--green)}
+.jstep{padding:1.5rem 1.3rem;border-inline-end:1px solid var(--line);display:grid;gap:.8rem;align-content:start}
+.jstep:first-child{padding-inline-start:0}
+.jstep h3{font-family:var(--disp);font-weight:600;font-size:1.5rem}
+#app[dir="rtl"] .jstep h3{font-family:var(--disp-ar);font-size:1.15rem;font-weight:700}
+.jstep ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.jstep li{display:flex;gap:.55rem;align-items:flex-start;font-size:.94rem;color:var(--basalt)}
+.jstep li .ic{width:18px;height:18px;color:var(--clay);margin-top:4px}
+.jtoday{background:var(--green);color:var(--sand);padding:1.5rem;display:grid;gap:.8rem;align-content:start}
+.jtoday h3{color:var(--sand);font-family:var(--disp);font-size:1.5rem;font-weight:600}
+#app[dir="rtl"] .jtoday h3{font-family:var(--disp-ar);font-size:1.15rem;font-weight:700}
+.jtoday p{font-size:.9rem;opacity:.85}
+.jtoday a{display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:.75rem 0;border-top:1px solid rgba(244,236,224,.2);text-decoration:none;color:var(--sand);font-weight:500}
+.jtoday a:hover{color:var(--gold)}
+.jtoday a .ic{width:18px;height:18px;color:var(--gold)}
+@media (max-width:1000px){.journey{grid-template-columns:repeat(3,minmax(0,1fr))}.jtoday{grid-column:1/-1;margin-top:1rem}}
+@media (max-width:680px){.journey{grid-template-columns:1fr}.jstep{padding-inline:0;border-inline-end:0;border-bottom:1px solid var(--line)}}
+
+/* Location */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.map{border:1px solid var(--line);background:var(--white);border-radius:2px;position:relative;overflow:hidden}
+.map svg{display:block;width:100%;height:auto;direction:ltr}
+.map text{font-family:var(--body);font-size:11px;fill:#5B544B}
+#app[dir="rtl"] .map text{font-family:var(--body-ar);font-size:12px}
+.map-legend{display:flex;gap:1rem;flex-wrap:wrap;padding:.7rem 1rem;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+.map-legend span{display:inline-flex;align-items:center;gap:.4rem}
+.map-legend i{display:inline-block;width:18px;height:3px}
+.access{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.7rem}
+.access li{display:flex;gap:.7rem;align-items:flex-start;font-size:.95rem}
+.access .ic{width:20px;height:20px;color:var(--clay-dk);margin-top:3px}
+.nataddr{margin-top:1.5rem;border:1px solid var(--green);border-radius:2px;background:var(--white)}
+.nataddr h4{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green);padding:.7rem 1rem;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:.5rem;align-items:center;flex-wrap:wrap}
+#app[dir="rtl"] .nataddr h4{letter-spacing:0;text-transform:none;font-size:.9rem}
+.nataddr dl{display:grid;grid-template-columns:auto 1fr;margin:0;font-size:.88rem}
+.nataddr dt,.nataddr dd{padding:.45rem 1rem;border-bottom:1px solid var(--line);margin:0}
+.nataddr dt{color:var(--muted)}
+.nataddr dd{color:var(--green);font-weight:500}
+.nataddr dl>*:nth-last-child(-n+2){border-bottom:0}
+@media (max-width:900px){.loc-grid{grid-template-columns:1fr}}
+
+/* Updates + register */
+.reg-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,4vw,56px);align-items:start}
+.news{list-style:none;margin:1.5rem 0 0;padding:0;border-top:1px solid var(--green)}
+.news li{padding:1rem 0;border-bottom:1px solid var(--line);display:grid;gap:.25rem}
+.news time{font-size:.8rem;color:var(--clay-dk);font-weight:500}
+.news b{color:var(--green);font-size:1rem}
+.news p{font-size:.9rem;color:var(--muted)}
+.form{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--green);border-radius:2px;padding:clamp(20px,3vw,34px)}
+.form h3{font-family:var(--disp);font-size:1.6rem;font-weight:600;margin-bottom:.3rem}
+#app[dir="rtl"] .form h3{font-family:var(--disp-ar);font-size:1.2rem;font-weight:700}
+.form .form-intro{font-size:.9rem;color:var(--muted);margin-bottom:1.2rem}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{display:grid;gap:.4rem;align-content:start}
+.field.full{grid-column:1/-1}
+.field label,.field legend{font-size:.84rem;font-weight:600;color:var(--green);padding:0}
+.field label i,.field legend i{font-style:normal;color:var(--clay)}
+.field input:not([type=checkbox]):not([type=radio]),.field select,.field textarea{font:inherit;font-size:.95rem;color:var(--basalt);background:var(--sand-lt);border:1px solid var(--line);border-radius:2px;padding:.72rem .9rem;width:100%}
+.field input[type=file]{padding:.55rem .6rem}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(18,63,56,.12)}
+fieldset.field{border:0;margin:0;padding:0;min-width:0}
+.opts{display:flex;flex-wrap:wrap;gap:.4rem}
+.opts label{display:inline-flex;align-items:center;gap:.4rem;font-size:.86rem;font-weight:500;color:var(--basalt);border:1px solid var(--line);background:var(--sand-lt);padding:.45rem .7rem;border-radius:2px;cursor:pointer}
+.opts input{accent-color:var(--green)}
+.consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.84rem;color:var(--muted);font-weight:400}
+.consent input{margin-top:.3rem;accent-color:var(--green);flex:none}
+.field .err{font-size:.78rem;color:#A3321F;display:none}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#A3321F}
+.field.invalid .err{display:block}
+.form-foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.3rem}
+.form-foot small{color:var(--muted);font-size:.8rem;max-width:42ch}
+.thanks{display:grid;gap:.8rem;text-align:center;justify-items:center;padding:2rem 1rem}
+.thanks .ic{width:44px;height:44px;color:var(--clay)}
+@media (max-width:900px){.reg-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.fields{grid-template-columns:1fr}}
+
+/* Teaser */
+.teaser{background:var(--green);color:var(--lime);margin-top:12px}
+.teaser .wrap{display:grid;grid-template-columns:1fr auto;gap:1.5rem 2.5rem;align-items:center;padding-block:clamp(36px,5vw,56px)}
+.teaser .eyebrow{color:var(--gold)}
+.teaser p.t{font-family:var(--disp);font-size:clamp(1.35rem,2.4vw,1.8rem);font-weight:600;color:var(--sand);line-height:1.25;margin-top:.5rem;max-width:40ch}
+#app[dir="rtl"] .teaser p.t{font-family:var(--disp-ar);font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.7}
+.teaser .chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1rem}
+.teaser .chips span{font-size:.8rem;border:1px solid rgba(227,216,198,.3);padding:.3rem .65rem;border-radius:2px}
+.teaser .ctas{display:flex;gap:.6rem;flex-wrap:wrap}
+@media (max-width:860px){.teaser .wrap{grid-template-columns:1fr}}
+
+/* Subpage bits */
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,64px);align-items:start}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
+.prose{display:grid;gap:1rem;max-width:64ch}
+.prose p{color:var(--muted)}
+blockquote.vq{margin:0;padding:1.5rem 0 1.5rem;border-top:1px solid var(--green);border-bottom:1px solid var(--line);font-family:var(--disp);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.3;color:var(--green);font-weight:500}
+#app[dir="rtl"] blockquote.vq{font-family:var(--disp-ar);font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.8;font-weight:600}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
+.tl li{padding:1.2rem 1.1rem 1.2rem 0;border-top:4px solid var(--lime);margin-top:-1px;display:grid;gap:.4rem;align-content:start;padding-inline:0 1.1rem}
+.tl li.done{border-top-color:var(--green)}
+.tl li.current{border-top-color:var(--clay)}
+.tl li small{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--clay-dk);min-height:1.1em}
+#app[dir="rtl"] .tl li small{letter-spacing:0;text-transform:none;font-size:.78rem}
+.tl li b{color:var(--green);font-size:1rem}
+.tl li p{font-size:.88rem;color:var(--muted)}
+@media (max-width:760px){.tl{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.tl{grid-template-columns:1fr}}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.checks li{display:flex;gap:.6rem;align-items:flex-start}
+.checks .ic{width:18px;height:18px;color:var(--clay);margin-top:4px}
+.tl.steps{grid-template-columns:repeat(5,minmax(0,1fr))}
+.tl.steps li{border-top-color:var(--clay)}
+@media (max-width:900px){.tl.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.tl.steps{grid-template-columns:1fr}}
+.card .checks li{font-size:.92rem;color:var(--basalt)}
+.bignum{display:grid;gap:.6rem;align-content:start;background:var(--white);border:1px solid var(--line);border-top:3px solid var(--clay);padding:1.4rem;border-radius:2px}
+.bignum .n{font-family:var(--disp);font-size:2.6rem;font-weight:700;color:var(--green);line-height:1;direction:ltr;text-align:start}
+.bignum h3{font-size:1rem}
+.bignum p{font-size:.92rem;color:var(--muted)}
+.bignum.alert{border-top-color:#A3321F}
+.bignum.alert .n{color:#A3321F}
+.notice-bar{display:flex;gap:.8rem;align-items:flex-start;padding:1rem 1.2rem;border:1px solid var(--green);background:var(--white);border-radius:2px;margin-bottom:1.5rem;font-weight:500;color:var(--green)}
+.notice-bar .ic{color:var(--clay);margin-top:3px}
+.faq{border-top:1px solid var(--green)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:1.1rem 0;display:flex;justify-content:space-between;gap:1rem;font-weight:600;color:var(--green)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--clay)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 1.1rem;color:var(--muted);max-width:70ch}
+.dcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--green);border-inline-start:1px solid var(--line)}
+.dcard{padding:1.3rem;display:grid;grid-template-columns:auto 1fr;gap:1rem;border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--white)}
+.dcard .ic{color:var(--green);width:26px;height:26px}
+.dcard p{color:var(--muted);font-size:.9rem;margin-top:.25rem}
+.dcard.wide{grid-column:1/-1}
+@media (max-width:600px){.dcards{grid-template-columns:1fr}}
+.digital-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(28px,4vw,56px);align-items:start}
+.phone{width:260px;max-width:100%;border-radius:38px;background:var(--green-dk);padding:11px;margin-inline:auto}
+.screen{border-radius:28px;background:var(--sand);overflow:hidden;min-height:480px;display:flex;flex-direction:column}
+.scr-top{background:var(--green);color:var(--sand);padding:1.4rem 1rem 1.2rem}
+.scr-top small{opacity:.75;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+.scr-top b{display:block;font-family:var(--disp);font-weight:600;font-size:1.3rem;margin-top:.3rem}
+#app[dir="rtl"] .scr-top b{font-family:var(--disp-ar);font-size:1.02rem}
+.scr-body{padding:1rem .85rem;display:grid;gap:.55rem}
+.scr-tiles{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.scr-tile{background:var(--lime);border-radius:2px;padding:.7rem;font-size:.74rem;font-weight:600;color:var(--green);display:grid;gap:.35rem}
+.scr-tile .ic{width:18px;height:18px;color:var(--clay-dk)}
+.scr-card{background:var(--white);border:1px solid var(--line);border-radius:2px;padding:.65rem;font-size:.74rem;display:flex;justify-content:space-between;gap:.5rem;align-items:center}
+.scr-card b{color:var(--green)}
+.scr-card i{font-style:normal;font-size:.66rem;color:var(--clay-dk);border:1px solid var(--clay);padding:.15rem .4rem;border-radius:2px}
+.phone-cap{font-size:.78rem;color:var(--muted);text-align:center;margin-top:.7rem}
+@media (max-width:900px){.digital-grid{grid-template-columns:1fr}}
+.spec-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--green);border-inline-start:1px solid var(--line)}
+.spec{padding:1.3rem 1.2rem;display:flex;align-items:center;gap:.9rem;border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--white)}
+.spec .ic{width:26px;height:26px;color:var(--clay-dk);stroke-width:1.3}
+.spec h3{font-family:var(--disp);font-weight:600;font-size:1.25rem}
+#app[dir="rtl"] .spec h3{font-family:var(--disp-ar);font-size:1rem}
+@media (max-width:980px){.spec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:440px){.spec-grid{grid-template-columns:1fr}}
+.contacts{display:grid;gap:0;border-top:1px solid var(--green)}
+.crow{display:grid;grid-template-columns:150px 1fr;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line);align-items:center}
+.crow small{font-size:.78rem;font-weight:600;color:var(--clay-dk)}
+.ph{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86rem;color:var(--green);background:var(--white);border:1px dashed var(--clay);padding:.3rem .55rem;border-radius:2px;justify-self:start;direction:ltr;display:inline-flex;align-items:center;gap:.5rem}
+.copy{font:600 .72rem var(--body);border:0;background:transparent;color:var(--clay-dk);cursor:pointer;padding:0}
+@media (max-width:520px){.crow{grid-template-columns:1fr;gap:.3rem}}
+.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1.5rem;border-top:1px solid var(--green);border-inline-start:1px solid var(--line)}
+.topic{padding:1rem 1.1rem;display:grid;gap:.2rem;border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--white)}
+.topic b{font-size:.95rem;color:var(--green);font-weight:600}
+.topic span{font-size:.86rem;color:var(--muted)}
+@media (max-width:560px){.topics{grid-template-columns:1fr}}
+.pp-grid{display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:clamp(32px,5vw,64px);align-items:start}
+.apply-card{position:sticky;top:150px;border-radius:2px;background:var(--white);border:1px solid var(--line);border-top:3px solid var(--clay);padding:1.6rem;display:grid;gap:1.1rem}
+.apply-card h3{font-family:var(--disp);font-weight:600;font-size:1.55rem}
+#app[dir="rtl"] .apply-card h3{font-family:var(--disp-ar);font-size:1.2rem}
+.apply-card .btn{justify-content:center;width:100%}
+.mini-h{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--clay-dk)}
+.notice{font-size:.86rem;background:var(--sand);border:1px solid var(--clay);border-radius:2px;padding:.8rem .9rem}
+.confirm-note{font-size:.86rem;color:var(--muted);border-inline-start:3px solid var(--clay);padding-inline-start:.8rem}
+@media (max-width:980px){.pp-grid{grid-template-columns:1fr}.apply-card{position:static}}
+.cats{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.2rem}
+.cats span{font-size:.86rem;padding:.4rem .75rem;border:1px solid var(--line);background:var(--white);border-radius:2px;color:var(--green)}
+.legal{max-width:780px;display:grid;gap:.9rem}
+.legal p{color:#3E3934}
+.legal p.muted{color:var(--muted)}
+.legal h2{font-family:var(--body);font-size:1.15rem;font-weight:600;margin-top:1.1rem;letter-spacing:0}
+#app[dir="rtl"] .legal h2{font-family:var(--body-ar);font-size:1.15rem;font-weight:600}
+.legal a{color:var(--clay-dk)}
+.draft-note{margin:.4rem 0 .6rem}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:2px;background:var(--white)}
+.ltable{width:100%;border-collapse:collapse;font-size:.92rem}
+.ltable th,.ltable td{padding:.65rem .85rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.ltable th{background:var(--sand-lt);color:var(--green);font-weight:600}
+.ltable tr:last-child td{border-bottom:0}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.field .help{font-size:.78rem;color:var(--muted)}
+.field-note{font-size:.9rem;background:var(--sand-lt);border:1px solid var(--line);border-inline-start:3px solid var(--clay);padding:.7rem .9rem;border-radius:2px}
+.field-note a,.form-foot small a,.consent a{color:var(--clay-dk)}
+fieldset.field.invalid .err{display:block}
+.send-err{margin-top:.8rem;font-size:.86rem;color:#A3321F}
+
+/* Footer */
+.footer{background:var(--green);color:var(--lime);padding-block:clamp(52px,6vw,76px) 2rem;margin-top:12px}
+.foot-top{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;padding-bottom:2rem;border-bottom:1px solid rgba(227,216,198,.18)}
+.footer .lockup{color:var(--sand)}
+.footer .lk-en small{color:var(--gold)}
+.foot-tag{font-size:.92rem;opacity:.85}
+.foot-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem;padding-block:2rem}
+.foot-cols h4{font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+#app[dir="rtl"] .foot-cols h4{letter-spacing:0;text-transform:none;font-size:.9rem}
+.foot-cols nav{display:grid;gap:.5rem}
+.foot-cols a{color:var(--sand);text-decoration:none;font-size:.92rem;justify-self:start;border-bottom:1px solid transparent}
+.foot-cols a:hover{color:var(--gold);border-color:var(--gold)}
+.fc{display:grid;gap:.45rem;font-size:.88rem}
+.fc span.l{opacity:.7;font-size:.78rem}
+.fc .v{direction:ltr;unicode-bidi:isolate;color:var(--sand);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.84rem;justify-self:start}
+.foot-mid{justify-content:flex-end;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center;padding-block:1.2rem;border-top:1px solid rgba(227,216,198,.18)}
+.social{display:flex;gap:.5rem;flex-wrap:wrap}
+.social a{font-size:.8rem;color:var(--sand);text-decoration:none;border:1px solid rgba(227,216,198,.3);padding:.35rem .7rem;border-radius:2px}
+.social a:hover{border-color:var(--gold);color:var(--gold)}
+.footer .lang-btn{border-color:var(--sand);color:var(--sand)}
+.footer .lang-btn:hover{background:var(--sand);color:var(--green)}
+.legalrow{display:flex;gap:.4rem 1.2rem;flex-wrap:wrap;font-size:.82rem;padding-top:1.2rem;border-top:1px solid rgba(227,216,198,.18)}
+.legalrow a{color:var(--lime);text-decoration:none}
+.legalrow a:hover{color:var(--gold)}
+.disclaimer{margin-top:1.2rem;font-size:.8rem;line-height:1.7;display:grid;gap:.6rem;opacity:.75}
+@media (max-width:900px){.foot-cols{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.foot-cols{grid-template-columns:1fr}}
+
+/* ---- v8: calmer, less templated ---- */
+.card{background:var(--white);border:1px solid var(--line)}
+.card::after{display:none}
+.section-head h2,.head-split h2{margin-top:0}
+.hero-kicker{font-size:.9rem;font-weight:500;color:var(--clay-dk);margin-bottom:1rem}
+.stage-note{font-size:.92rem;margin-top:1.2rem}
+.stage-note{display:flex;flex-wrap:wrap;gap:.3rem 1.4rem}.stage-note span{white-space:nowrap}
+.svc-rows{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.8rem 2rem}
+.svc-rows li{border-top:1px solid var(--green);padding-top:1rem;display:grid;gap:.4rem;align-content:start}
+.svc-rows h3{font-size:1.05rem;color:var(--green)}
+.svc-rows p{font-size:.93rem;color:var(--muted)}
+@media (max-width:980px){.svc-rows{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.svc-rows{grid-template-columns:1fr;gap:1.2rem}}
+.spec-line{margin-top:1.8rem;font-size:.95rem;color:var(--basalt);max-width:80ch}
+.spec-line b{color:var(--green)}
+.teaser{margin-top:0}
+.teaser .wrap{padding-block:clamp(32px,4vw,48px)}
+.teaser p.t{margin-top:0}
+.teaser p.s{margin-top:.6rem;color:var(--sand);opacity:.85;max-width:62ch;font-size:.98rem}
+.pp-meta{font-size:.9rem!important;margin-top:1.1rem!important;opacity:.8!important}
+.pp-hero .hero-ctas{margin-top:1.6rem}
+.pp-hero .notice{margin-top:1rem;max-width:62ch;color:var(--basalt);opacity:1}
+.notice a{color:var(--clay-dk);font-weight:600}
+.pp-who h2{font-size:clamp(1.4rem,2.4vw,1.8rem)}
+.who-list{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--green)}
+.who-list li{padding:.85rem 1rem .85rem 0;border-bottom:1px solid var(--line);font-weight:500;color:var(--green);font-size:.95rem;padding-inline:0 1rem}
+@media (max-width:900px){.who-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.who-list{grid-template-columns:1fr}}
+.pp-small{font-size:.88rem;margin-top:1rem}
+.apply-card .pp-small{margin-top:0}
+.prep{margin:1.6rem 0 0;padding:0;list-style:none;counter-reset:prep;display:grid;gap:0;border-top:1px solid var(--green)}
+.prep li{counter-increment:prep;display:grid;grid-template-columns:2.2rem 1fr;gap:.2rem 0;padding:1rem 0;border-bottom:1px solid var(--line)}
+.prep li::before{content:counter(prep);grid-row:span 2;font-family:var(--disp);font-size:1.4rem;font-weight:600;color:var(--clay);line-height:1.1}
+.prep b{color:var(--green)}
+.prep span{color:var(--muted);font-size:.94rem}
+.pp-facts{margin:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.pp-facts div{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.pp-facts dt{color:var(--muted)}
+.pp-facts dd{margin:0;font-weight:600;color:var(--green);text-align:end}
+ol.topics{list-style:none;padding:0;margin-top:0;counter-reset:tp;grid-template-columns:repeat(3,minmax(0,1fr))}
+ol.topics .topic{align-content:start;counter-increment:tp;position:relative;padding-inline-start:2.8rem}
+ol.topics .topic::before{content:counter(tp);position:absolute;inset-inline-start:1.1rem;top:1rem;font-weight:600;color:var(--clay);font-size:.9rem}
+@media (max-width:900px){ol.topics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){ol.topics{grid-template-columns:1fr}}
+.tl.steps4 li{border-top-color:var(--clay)}
+.tl.steps4 li small,#app[dir="rtl"] .tl.steps4 li small{font-size:1.2rem;letter-spacing:0;font-family:var(--disp)}
+.other-list{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem 2rem}
+.other-list div{border-top:1px solid var(--line);padding-top:.9rem}
+.other-list dt{font-weight:600;color:var(--green)}
+.other-list dd{margin:.3rem 0 0;color:var(--muted);font-size:.93rem}
+@media (max-width:760px){.other-list{grid-template-columns:1fr}}
+.pp-sticky{display:none}
+@media (max-width:760px){
+  .pp-sticky{display:block;position:sticky;bottom:0;z-index:20;padding:.7rem 16px calc(.7rem + env(safe-area-inset-bottom));background:var(--sand);border-top:1px solid var(--line);box-shadow:0 -6px 18px rgba(31,28,25,.06)}
+  .pp-sticky .btn{width:100%;justify-content:center}
+  .pp-sticky.is-hidden{visibility:hidden}
+}
+.tl li small:empty::before{content:"\00a0"}
+</style>
+
+<!-- Icon sprite -->
+</head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 48 48"><g fill="currentColor"><path d="M20 20H2v-6h6V8h6V2h6z"/><path d="M28 20h18v-6h-6V8h-6V2h-6z"/><path d="M20 28H2v6h6v6h6v6h6z"/><path d="M28 28h18v6h-6v6h-6v6h-6z"/></g></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 10"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M10 21v-4h4v4M12 9v4M10 11h4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-emergency" viewBox="0 0 24 24"><path d="M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z"/></symbol>
+  <symbol id="i-steth" viewBox="0 0 24 24"><path d="M6 3v5a4 4 0 0 0 8 0V3M10 12v3a4 4 0 0 0 8 0v-1.5"/><circle cx="18" cy="12" r="2"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 6v13M3 15h18v4M21 15v-2.5A2.5 2.5 0 0 0 18.5 10H11v5"/><circle cx="7" cy="12" r="1.8"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></symbol>
+  <symbol id="i-scalpel" viewBox="0 0 24 24"><path d="M19.5 4.5l-10 10-2-2 7.5-7.5a3.5 3.5 0 0 1 4.5-.5zM9.5 14.5L4 20"/></symbol>
+  <symbol id="i-pill" viewBox="0 0 24 24"><path d="M10.5 20.5a4.95 4.95 0 0 1-7-7l6-6a4.95 4.95 0 0 1 7 7z"/><path d="M8.5 8.5l7 7"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 11 11 5 19 5c0 8-6 14-14 14zM5 19l7-7"/></symbol>
+  <symbol id="i-consult" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
+  <symbol id="i-cardio" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/><path d="M7 12h2.5l1.2-2 2 4 1.3-2H17"/></symbol>
+  <symbol id="i-bone" viewBox="0 0 24 24"><path d="M9.5 7.5l7 7M8.3 4.2a2.2 2.2 0 0 0-3.2 3 2.2 2.2 0 0 0 .8 3.9l1.6-1.6 7 7-1.6 1.6a2.2 2.2 0 0 0 3.9.8 2.2 2.2 0 0 0 3-3.2 2.2 2.2 0 0 0-.8-3.9l-1.6 1.6-7-7 1.6-1.6a2.2 2.2 0 0 0-3.7-.6z"/></symbol>
+  <symbol id="i-child" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9 14.5s1 1.5 3 1.5 3-1.5 3-1.5M9.2 10.5h.01M14.8 10.5h.01"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M3 8l9-4 9 4-9 4zM3 12.5l9 4 9-4M3 17l9 4 9-4"/></symbol>
+  <symbol id="i-mother" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.2"/><path d="M12 10.2V21M8.5 16h7"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-portal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M8 21h8M12 17v4"/><rect x="9.5" y="9.5" width="5" height="4" rx=".8"/><path d="M10.5 9.5V8.3a1.5 1.5 0 0 1 3 0v1.2"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M8 3v4M16 3v4M9 15l2 2 4-4"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="1"/><path d="M15 11l6-3v8l-6-3"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 10h18M7 15h4"/></symbol>
+  <symbol id="i-nodes" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="12" cy="10" r="1.6"/><path d="M6.7 7l3.9 2.2M17.3 7l-3.9 2.2M12 11.6V16"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9H4z"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 5.5a3 3 0 0 1 0 5.5M17.5 14a5.5 5.5 0 0 1 3 5"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="14" rx="2"/><path d="M6 11h12M9 21l1.5-4M15 21l-1.5-4M9 14h.01M15 14h.01"/></symbol>
+  <symbol id="i-road" viewBox="0 0 24 24"><path d="M8 3L5 21M16 3l3 18M12 4v3M12 10v3M12 16v3"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16h14v-4l-2-5H7l-2 5z"/><circle cx="8" cy="16.5" r="1.5"/><circle cx="16" cy="16.5" r="1.5"/></symbol>
+  <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.8"/><path d="M8 8h8M12 8v6l3 5M12 14l-3 5"/></symbol>
+  <symbol id="i-lang" viewBox="0 0 24 24"><path d="M4 5h9M8.5 3v2M6 5c1 4 4 7 7 8M11 5c-1 4-3.5 7-6.5 9"/><path d="M13 21l4-9 4 9M14.5 18h5"/></symbol>
+</svg>
+
+<div id="app" dir="ltr" lang="en">
+<a class="skip" href="#" data-ar="انتقل إلى المحتوى الرئيسي">Skip to main content</a>
+
+<div class="announce" role="region" aria-label="Hospital status" data-ar-aria="حالة المستشفى">
+  <div class="wrap">
+    <span>Sikentif Hospital · Opening soon in Riyadh</span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="ar-font" lang="ar" dir="rtl">مستشفى سيكنتيف · قريبًا في الرياض</span>
+    <a href="#partners" data-ar="شركاء التقنية: التسجيل مفتوح">Technology partners: registration open</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap head-row">
+    <a href="#home" class="lockup" aria-label="Sikentif Hospital — مستشفى سيكنتيف">
+      <span class="lk-en">Sikentif<small>Hospital</small></span>
+      <span class="lk-div"></span>
+      <svg aria-hidden="true"><use href="#logo"/></svg>
+      <span class="lk-div"></span>
+      <span class="lk-ar" lang="ar">مستشفى سيكنتيف</span>
+    </a>
+    <div class="utility">
+      <a class="u" href="#need-care"><svg class="ic"><use href="#i-alert"/></svg><span data-ar="رعاية عاجلة؟">Need care now?</span></a>
+      <a class="u" href="#partners"><svg class="ic"><use href="#i-nodes"/></svg><span data-ar="شركاء التقنية">Technology partners</span></a>
+      <div class="lang-switch" role="group" aria-label="Language — اللغة"><button type="button" data-lang="ar" lang="ar">العربية</button><span class="bar" aria-hidden="true"></span><button type="button" data-lang="en" lang="en">English</button></div>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu" data-ar-aria="فتح القائمة"><svg class="ic"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <div class="nav-row">
+    <div class="wrap">
+      <nav class="nav" aria-label="Main" data-ar-aria="القائمة الرئيسية">
+        <a href="#about" data-view="about" data-ar="عن سيكنتيف">About</a>
+        <a href="#services" data-view="services" data-ar="الخدمات">Services</a>
+        <a href="#patients" data-view="patients" data-ar="المرضى">Patients</a>
+        <a href="#updates" data-view="updates" data-ar="المستجدات">Updates</a>
+        <a href="#careers" data-view="careers" data-ar="الوظائف">Careers</a>
+        <a href="#partners" data-view="partners" data-ar="الشركاء">Partners</a>
+        <a href="#contact" data-view="contact" data-ar="تواصل معنا">Contact</a>
+      </nav>
+      <a href="#register" class="btn btn-primary nav-cta" data-ar="احصل على المستجدات">Get updates</a>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="wrap" aria-label="Menu" data-ar-aria="القائمة">
+      <a href="#about" data-ar="عن سيكنتيف">About</a>
+      <a href="#services" data-ar="الخدمات">Services</a>
+      <a href="#patients" data-ar="المرضى">Patients</a>
+      <a href="#updates" data-ar="المستجدات">Updates</a>
+      <a href="#careers" data-ar="الوظائف">Careers</a>
+      <a href="#partners" data-ar="شركاء التقنية">Technology partners</a>
+      <a href="#contact" data-ar="تواصل معنا">Contact</a>
+      <a href="#need-care" data-ar="هل تحتاج إلى رعاية الآن؟">Need care now?</a>
+      <a href="#register" class="btn btn-primary" data-ar="التسجيل للمستجدات">Register for updates</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================================================== HOME -->
+<main id="view-home" data-page="home">
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        
+        <p class="hero-kicker" data-ar="مستشفى خاص · الرياض">Private hospital · Riyadh</p>
+        <h1 data-ar="رعاية صحية خاصة لعائلات الرياض">Private healthcare for Riyadh's families</h1>
+        <p class="lede" data-ar="يفتتح مستشفى سيكنتيف أبوابه في الرياض، ليجمع رعاية الطوارئ والعيادات التخصصية والتشخيص والجراحة والتنويم تحت سقف واحد، باللغتين العربية والإنجليزية.">Sikentif Hospital is opening in Riyadh, bringing emergency care, specialist clinics, diagnostics, surgery and inpatient care together under one roof, in Arabic and English.</p>
+                <div class="hero-ctas">
+          <a href="#register" class="btn btn-primary btn-lg"><span data-ar="سجّل للمستجدات">Register for updates</span></a>
+          <a href="#services" class="btn btn-clay btn-lg"><span data-ar="خدماتنا">Our services</span></a>
+        </div>
+        <div class="hero-links">
+          <a class="link-arrow" href="#careers"><span data-ar="الوظائف">Careers</span><svg class="ic flip"><use href="#i-arrow"/></svg></a>
+          <a class="link-arrow" href="#partners"><span data-ar="شركاء التقنية">Technology partners</span><svg class="ic flip"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <figure class="visual">
+        <div class="frame">
+          <svg viewBox="0 0 640 540" role="img" aria-label="Illustration of a modern Najdi-inspired courtyard building with the Riyadh skyline behind" data-ar-aria="رسم توضيحي لمبنى بفناء داخلي مستوحى من العمارة النجدية، وخلفه أفق الرياض">
+            <defs>
+              <linearGradient id="h-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFE3D0"/><stop offset=".7" stop-color="#F4ECE0"/><stop offset="1" stop-color="#EAD9BF"/></linearGradient>
+              <linearGradient id="h-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E5A52"/><stop offset="1" stop-color="#123F38"/></linearGradient>
+              <linearGradient id="h-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C89A70"/><stop offset="1" stop-color="#B07E57"/></linearGradient>
+              <linearGradient id="h-pool" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E857B"/><stop offset="1" stop-color="#3E665C"/></linearGradient>
+              <pattern id="h-screen" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#8A5A3A"/><path d="M0 5h10M5 0v10" stroke="#C89A70" stroke-width="2"/></pattern>
+            </defs>
+            <rect width="640" height="540" fill="url(#h-sky)"/>
+            <circle cx="470" cy="112" r="52" fill="#FFFDF9" opacity=".55"/>
+            <g fill="#D9C6A8" opacity=".95">
+              <rect x="22" y="206" width="26" height="114"/><rect x="54" y="232" width="22" height="88"/>
+              <path d="M150 320 L159 150 Q170 128 181 150 L190 320Z"/>
+              <path d="M163 170 Q170 190 177 170 L176 198 L164 198Z" fill="#EFE3D0"/>
+              <path d="M520 320 L544 176 L568 320Z"/>
+              <circle cx="544" cy="212" r="8" fill="#E7D8BF"/>
+              <rect x="590" y="238" width="30" height="82"/>
+            </g>
+            <rect x="300" y="150" width="280" height="200" fill="url(#h-glass)"/>
+            <g stroke="#4B7A70" stroke-width="1.5" opacity=".8"><path d="M300 190h280M300 230h280M300 270h280M300 310h280M340 150v200M380 150v200M420 150v200M460 150v200M500 150v200M540 150v200"/></g>
+            <rect x="300" y="150" width="280" height="8" fill="#E3D8C6"/>
+            <path d="M40 250 h8 v-8 h8 v-8 h8 v8 h8 v8 h8 v-8 h8 v-8 h8 v8 h8 v8 h8 v-8 h8 v-8 h8 v8 h8 v8 h8 v-8 h8 v-8 h8 v8 h8 v8 h8 v-8 h8 v-8 h8 v8 h8 v8 h8 v-8 h8 v-8 h8 v8 h8 v8 h8 v-8 h8 v-8 h8 v8 h8 v8 h8 V430 H40Z" fill="url(#h-wall)"/>
+            <g fill="#7A4E31" opacity=".65"><path d="M70 290 l6 -10 6 10z M110 290 l6 -10 6 10z M150 290 l6 -10 6 10z M190 290 l6 -10 6 10z M230 290 l6 -10 6 10z M270 290 l6 -10 6 10z"/></g>
+            <g fill="#6E452B" opacity=".75"><path d="M70 430 V358 a22 22 0 0 1 44 0 V430Z"/><path d="M134 430 V358 a22 22 0 0 1 44 0 V430Z"/><path d="M198 430 V358 a22 22 0 0 1 44 0 V430Z"/><path d="M262 430 V358 a22 22 0 0 1 44 0 V430Z"/></g>
+            <rect x="340" y="300" width="200" height="130" fill="#EADBC4"/>
+            <path d="M340 300 h200" stroke="#A8653B" stroke-width="3"/>
+            <rect x="360" y="322" width="70" height="108" fill="url(#h-screen)" opacity=".85"/>
+            <path d="M455 430 V372 a30 30 0 0 1 60 0 V430Z" fill="#F4ECE0"/>
+            <rect x="0" y="430" width="640" height="110" fill="#E5D3B6"/>
+            <path d="M0 430 H640" stroke="#A8653B" stroke-width="2"/>
+            <rect x="90" y="456" width="460" height="30" fill="url(#h-pool)"/>
+            <path d="M110 471 H530" stroke="#E3D8C6" stroke-width="1" opacity=".5"/>
+            <g stroke="#CDB894" stroke-width="1"><path d="M0 500 H640M0 522 H640M80 486 L50 540M220 486 l-10 54M320 486 v54M420 486 l10 54M560 486 l30 54"/></g>
+            <g transform="translate(590 430)"><path d="M0 0 C-2 -40 4 -80 -2 -120" stroke="#7A5A3A" stroke-width="6" fill="none" stroke-linecap="round"/><g fill="#123F38"><path d="M-2 -120 C-22 -128 -42 -118 -52 -102 C-36 -114 -18 -114 -2 -116Z"/><path d="M-2 -120 C18 -130 38 -122 48 -106 C32 -116 14 -116 -2 -116Z"/><path d="M-2 -120 C-10 -142 -28 -148 -44 -144 C-26 -138 -12 -128 -4 -118Z"/><path d="M-2 -120 C8 -142 26 -148 42 -142 C24 -136 12 -128 0 -118Z"/><path d="M-2 -120 C-6 -104 -20 -90 -32 -84 C-22 -98 -12 -108 -4 -118Z"/><path d="M-2 -120 C4 -104 18 -92 30 -88 C20 -100 8 -110 0 -118Z"/></g></g>
+            <g transform="translate(40 430) scale(.8)"><path d="M0 0 C3 -40 -2 -80 4 -120" stroke="#7A5A3A" stroke-width="6" fill="none" stroke-linecap="round"/><g fill="#123F38"><path d="M4 -120 C-16 -128 -36 -118 -46 -102 C-30 -114 -12 -114 4 -116Z"/><path d="M4 -120 C24 -130 44 -122 54 -106 C38 -116 20 -116 4 -116Z"/><path d="M4 -120 C-4 -142 -22 -148 -38 -144 C-20 -138 -6 -128 2 -118Z"/><path d="M4 -120 C14 -142 32 -148 48 -142 C30 -136 18 -128 6 -118Z"/></g></g>
+          </svg>
+        </div>
+        <figcaption class="visual-cap" data-ar="رسم معماري توضيحي">Architectural illustration</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- What is Sikentif -->
+  <section class="section lt tight" id="what">
+    <div class="wrap">
+      <div class="head-split">
+        <div class="section-head"><h2 data-ar="ما هو سيكنتيف؟">What is Sikentif?</h2></div>
+        
+      </div>
+      <div class="facts">
+        <div class="fact"><small data-ar="الافتتاح">Opening</small><p data-ar="قريبًا في الرياض، وبالتسجيل يصلك موعد الافتتاح أولًا.">Opening soon in Riyadh. Register to hear the date first.</p></div>
+        <div class="fact"><small data-ar="أين">Where</small><p data-ar="في الرياض، وتُنشر هنا تفاصيل العنوان والوصول قريبًا.">In Riyadh. Address and directions will be shared here soon.</p></div>
+        <div class="fact"><small data-ar="لمن">Who for</small><p data-ar="للمواطنين والمقيمين في الرياض وعائلاتهم، سواء كانوا مشمولين بالتأمين أو يفضّلون الدفع المباشر.">Riyadh's citizens, residents and families — whether insured or paying directly.</p></div>
+      </div>
+      <div class="vision-line">
+        <p data-ar="رؤيتنا: رعاية عالية الجودة، مريحة ومتصلة، تتمحور حولك.">Our vision: high-quality care that is convenient, connected and centred on you.</p>
+        <div class="row-ctas" style="margin-top:0">
+          <a href="#about" class="btn btn-primary"><span data-ar="قصتنا">Our story</span></a>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech teaser -->
+  <section class="teaser" id="home-partners">
+    <div class="wrap">
+      <div>
+        <p class="t" data-ar="التسجيل مفتوح لشركاء التقنية">Technology partner registration is open</p>
+        <p class="s" data-ar="ندعو شركات التطبيقات الصحية والبرمجيات كخدمة والمواقع الإلكترونية إلى التعريف بقدراتها لخدمات المستشفى الرقمية. يستغرق الاستبيان نحو 15–20 دقيقة.">Healthcare app, SaaS and website companies can tell us about their capabilities for the hospital's digital services. The questionnaire takes about 15–20 minutes.</p>
+      </div>
+      <div class="ctas">
+        <a href="#partners" class="btn btn-gold"><span data-ar="تفاصيل الشراكة والاستبيان">Partner details and questionnaire</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planned services -->
+  <section class="section" id="home-services">
+    <div class="wrap">
+      <div class="head-split">
+        <div class="section-head">
+          
+          <h2 data-ar="خدماتنا">Our services</h2>
+          <p class="lede" data-ar="رعاية متكاملة في مكان واحد: الطوارئ والعيادات الخارجية والتشخيص والجراحة والتنويم والصيدلية، مع خدمة باللغتين العربية والإنجليزية في كل خطوة.">Complete care in one place: emergency, outpatient clinics, diagnostics, surgery, inpatient care and pharmacy, with every step available in Arabic and English.</p>
+        </div>
+        
+      </div>
+      <ul class="svc-rows"><li><h3 data-ar="رعاية الطوارئ">Emergency care</h3><p data-ar="تقييم الحالات الطارئة وعلاجها على مدار الساعة.">Round-the-clock emergency assessment and treatment.</p></li><li><h3 data-ar="العيادات الخارجية">Outpatient clinics</h3><p data-ar="استشارات ومتابعة في عيادات تخصصية.">Specialist consultations and follow-up.</p></li><li><h3 data-ar="خدمات التشخيص">Diagnostics</h3><p data-ar="خدمات المختبر والأشعة.">Laboratory and imaging services.</p></li><li><h3 data-ar="الجراحة">Surgery</h3><p data-ar="رعاية جراحية تشمل مجموعة من الإجراءات، منها جراحات اليوم الواحد.">Surgical care across a range of procedures, including day surgery.</p></li><li><h3 data-ar="التنويم">Inpatient care</h3><p data-ar="رعاية المرضى المنوَّمين في أجنحة تراعي الراحة والخصوصية.">Ward-based care designed for comfort and privacy.</p></li><li><h3 data-ar="الصيدلية">Pharmacy</h3><p data-ar="صيدلية داخلية للمرضى المنوَّمين والمراجعين.">In-hospital pharmacy for inpatients and outpatients.</p></li><li><h3 data-ar="الفحص والرعاية الوقائية">Screening &amp; preventive care</h3><p data-ar="فحوصات دورية وبرامج للعافية.">Health checks and wellness programmes.</p></li><li><h3 data-ar="الوصول إلى الاستشاريين">Specialist access</h3><p data-ar="استشارات تخصصية في التخصصات الرئيسية.">Consultations with specialists across key disciplines.</p></li></ul>
+      <p class="spec-line" data-ar="&lt;b&gt;التخصصات:&lt;/b&gt; أمراض القلب، وجراحة العظام، وطب الأطفال، والطب الباطني، والأمراض الجلدية، والنساء والولادة، والجراحة العامة، وطب العيون."><b>Specialties:</b> cardiology, orthopaedics, paediatrics, internal medicine, dermatology, obstetrics and gynaecology, general surgery and ophthalmology.</p>
+      <div class="row-ctas">
+        <a href="#services" class="btn btn-primary"><span data-ar="جميع الخدمات">View all services</span></a>
+        <a href="#register" class="btn btn-clay js-interest" data-interest="services"><span data-ar="احصل على مستجدات الافتتاح">Get opening updates</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Patient journey -->
+  <section class="section lt" id="journey">
+    <div class="wrap">
+      <div class="head-split">
+        <div class="section-head">
+          
+          <h2 data-ar="مصمَّم حول رحلة المريض">Designed around the patient journey</h2>
+          <p class="lede" data-ar="كل خطوة في الزيارة واضحة وهادئة، باللغتين العربية والإنجليزية.">Every step of a visit is clear and calm, in Arabic and English.</p>
+        </div>
+        
+      </div>
+      <div class="journey">
+        <div class="jstep">
+          
+          <h3 data-ar="قبل زيارتك">Before your visit</h3>
+          <ul>
+            <li><span data-ar="الحجز عبر الموقع أو بالهاتف">Book online or by phone</span></li>
+            <li><span data-ar="التحقق من التأمين مسبقًا">Check your insurance ahead of time</span></li>
+            <li><span data-ar="إرشادات واضحة للوصول والمواقف">Clear directions and parking information</span></li>
+          </ul>
+        </div>
+        <div class="jstep">
+          
+          <h3 data-ar="أثناء زيارتك">During your visit</h3>
+          <ul>
+            <li><span data-ar="العربية والإنجليزية في كل مكتب">Arabic and English at every desk</span></li>
+            <li><span data-ar="معلومات واضحة عن أوقات الانتظار">Clear information on waiting times</span></li>
+            <li><span data-ar="النتائج والوصفات في مكان واحد">Results and prescriptions in one place</span></li>
+          </ul>
+        </div>
+        <div class="jstep">
+          
+          <h3 data-ar="بعد زيارتك">After your visit</h3>
+          <ul>
+            <li><span data-ar="تذكيرات بالمتابعة">Follow-up reminders</span></li>
+            <li><span data-ar="متابعة عن بُعد">Telehealth check-ins</span></li>
+            <li><span data-ar="إعادة صرف الوصفات وفوترة واضحة">Prescription refills and simple billing</span></li>
+          </ul>
+        </div>
+        <div class="jtoday">
+          
+          <h3 data-ar="اليوم، قبل الافتتاح">Today, before we open</h3>
+          <p data-ar="قبل الافتتاح، إليك طرق الحصول على المساعدة:">Before we open, here's how to get help:</p>
+          <a href="#need-care"><span data-ar="هل تحتاج إلى رعاية الآن؟">Need care now?</span><svg class="ic flip"><use href="#i-arrow"/></svg></a>
+          <a href="#register"><span data-ar="التسجيل للمستجدات">Register for updates</span><svg class="ic flip"><use href="#i-arrow"/></svg></a>
+          <a href="#faqs"><span data-ar="أسئلة المرضى الشائعة">Patient FAQs</span><svg class="ic flip"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="section" id="location">
+    <div class="wrap loc-grid">
+            <div>
+        <div class="section-head" style="margin-bottom:1rem">
+          
+          <h2 data-ar="موقعنا في الرياض">Located in Riyadh</h2>
+          
+        </div>
+        <p class="muted js-loc-text" data-ar="يقع مستشفى سيكنتيف في الرياض، وتُنشر هنا قريبًا تفاصيل العنوان الوطني والاتجاهات والمواقف.">Sikentif Hospital is in Riyadh. The full National Address, directions and parking details will be shared here soon.</p>
+        <ul class="access">
+          <li><svg class="ic"><use href="#i-car"/></svg><span data-ar="مواقف للمرضى والزوار ومنطقة إنزال">Patient and visitor parking with drop-off</span></li>
+          <li><svg class="ic"><use href="#i-access"/></svg><span data-ar="مداخل مهيأة لذوي الإعاقة">Step-free, accessible entrances</span></li>
+          <li><svg class="ic"><use href="#i-train"/></svg><span data-ar="تُعلن تفاصيل الوصول بالطرق والنقل العام مع العنوان">Road and public transport access will be shared with the address</span></li>
+        </ul>
+        <div class="row-ctas">
+          <a href="#register" class="btn btn-primary js-interest" data-interest="location"><span data-ar="أبلغني عند الإعلان عن الموقع">Notify me when the location is announced</span></a>
+          <a class="btn btn-clay js-maps" href="#" target="_blank" rel="noopener" hidden><span data-ar="افتح في الخرائط">Open in Maps</span></a>
+        </div>
+      </div>
+      <div>
+        <div class="nataddr">
+          <h4><span data-ar="العنوان الوطني">National Address</span></h4>
+          <dl>
+            <dt data-ar="رقم المبنى">Building no.</dt><dd class="js-na" data-k="building">—</dd>
+            <dt data-ar="الشارع">Street</dt><dd class="js-na" data-k="street">—</dd>
+            <dt data-ar="الحي">District</dt><dd class="js-na" data-k="district">—</dd>
+            <dt data-ar="الرمز البريدي">Postal code</dt><dd class="js-na" data-k="postal">—</dd>
+            <dt data-ar="الرقم الإضافي">Additional no.</dt><dd class="js-na" data-k="additional">—</dd>
+            <dt data-ar="المدينة">City</dt><dd data-ar="الرياض">Riyadh</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Updates + register -->
+  <section class="section lt" id="register">
+    <div class="wrap reg-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:0">
+          
+          <h2 data-ar="مستجدات الافتتاح تصلك أولًا">Be the first to know</h2>
+          <p class="lede" data-ar="بالتسجيل تصلك مستجدات موعد الافتتاح والخدمات والأيام المفتوحة، عبر البريد الإلكتروني أو الرسائل النصية أو واتساب، وباللغة التي تفضّلها.">Register to receive updates on our opening date, services and open days — by email, SMS or WhatsApp, in the language you prefer.</p>
+        </div>
+        <ul class="news js-news" data-limit="3"></ul>
+        <div class="row-ctas"><a href="#updates" class="link-arrow"><span data-ar="جميع المستجدات">See all updates</span><svg class="ic flip"><use href="#i-arrow"/></svg></a></div>
+      </div>
+      <form class="form js-form" id="regForm" data-form="updates" novalidate>
+        <div class="form-body">
+          <h3 data-ar="التسجيل للمستجدات">Register for updates</h3>
+          <p class="form-intro" data-ar="نرسل فقط المستجدات المهمة، بلغتك المفضلة.">We only send meaningful updates, in your preferred language.</p>
+          <div class="hp" aria-hidden="true"><label>Website <input name="website_hp" tabindex="-1" autocomplete="off"></label></div>
+          <div class="fields">
+            <div class="field full"><label for="r-name"><span data-ar="الاسم الكامل">Full name</span> <i>*</i></label><input id="r-name" name="name" data-rule="name" placeholder="First and last name" data-ar-ph="الاسم الأول واسم العائلة" autocomplete="name" required><span class="err" data-ar="يرجى إدخال الاسم الكامل.">Please enter your full name.</span></div>
+            <div class="field"><label for="r-email"><span data-ar="البريد الإلكتروني">Email</span> <i>*</i></label><input id="r-email" name="email" type="email" data-rule="email" placeholder="name@example.com" autocomplete="email" required dir="ltr"><span class="err" data-ar="يرجى إدخال بريد إلكتروني صحيح، مثل &lt;bdi dir=&quot;ltr&quot;&gt;name@example.com&lt;/bdi&gt;">Enter a valid email, e.g. name@example.com</span></div>
+            <div class="field"><label for="r-mobile"><span data-ar="رقم الجوال">Mobile number</span></label><input id="r-mobile" name="mobile" type="tel" inputmode="tel" data-rule="mobile" data-required-if="r-channel:whatsapp,sms" autocomplete="tel" placeholder="+966 5X XXX XXXX" dir="ltr"><small class="help" data-ar="مطلوب للمستجدات عبر الرسائل النصية أو واتساب">Required for SMS or WhatsApp updates</small><span class="err" data-ar="يرجى إدخال رقم جوال سعودي يبدأ بـ 05 أو &lt;bdi dir=&quot;ltr&quot;&gt;+966 5&lt;/bdi&gt;">Enter a Saudi mobile number starting 05 or +966 5</span></div>
+            <fieldset class="field full"><legend data-ar="أنا مهتم بصفتي">I'm interested as a</legend>
+              <div class="opts">
+                <label><input type="checkbox" name="interest" value="patient"> <span data-ar="مريض / عائلة">Patient / family</span></label>
+                <label><input type="checkbox" name="interest" value="job"> <span data-ar="باحث عن عمل">Job seeker</span></label>
+                <label><input type="checkbox" name="interest" value="partner"> <span data-ar="شريك">Partner</span></label>
+                <label><input type="checkbox" name="interest" value="media"> <span data-ar="إعلام">Media</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="field full" data-min="1"><legend><span data-ar="أبلغني عن">Tell me about</span> <i>*</i></legend>
+              <div class="opts">
+                <label><input type="checkbox" name="topic" value="opening" checked> <span data-ar="موعد الافتتاح">Opening date</span></label>
+                <label><input type="checkbox" name="topic" value="services"> <span data-ar="الخدمات والعيادات">Services and clinics</span></label>
+                <label><input type="checkbox" name="topic" value="location"> <span data-ar="الإعلان عن الموقع">Location announced</span></label>
+                <label><input type="checkbox" name="topic" value="insurance"> <span data-ar="شركات التأمين">Insurers</span></label>
+              </div>
+              <span class="err" data-ar="يرجى اختيار موضوع واحد على الأقل.">Please choose at least one topic.</span>
+            </fieldset>
+            <div class="field full"><label for="r-insurer" data-ar="شركة التأمين (اختياري)">Your insurer (optional)</label><input id="r-insurer" name="insurer"><small class="help" data-ar="سنبلغك إذا تم الاتفاق مع شركة تأمينك">We'll tell you if we agree terms with your insurer</small></div>
+            <div class="field"><label for="r-channel" data-ar="وسيلة التواصل المفضلة">Preferred channel</label>
+              <select id="r-channel" name="channel"><option value="email" data-ar="البريد الإلكتروني">Email</option><option value="whatsapp" data-ar="واتساب">WhatsApp</option><option value="sms" data-ar="رسالة نصية">SMS</option></select></div>
+            <div class="field"><label for="r-lang" data-ar="لغة التواصل">Language</label>
+              <select id="r-lang" name="language"><option value="en">English</option><option value="ar">العربية</option></select></div>
+            <div class="field full"><label class="consent"><input type="checkbox" name="consent" required> <span data-ar="أوافق على أن يتواصل معي مستشفى سيكنتيف بشأن مستجدات الافتتاح، وعلى معالجة بياناتي الشخصية لهذا الغرض وفقًا لنظام حماية البيانات الشخصية و&lt;a href=&quot;#privacy&quot;&gt;سياسة الخصوصية&lt;/a&gt;. ويمكنني إلغاء الاشتراك في أي وقت.">I agree that Sikentif Hospital may contact me about opening updates, and may process my personal data for this purpose under the Personal Data Protection Law (PDPL) and the <a href="#privacy">Privacy Policy</a>. I can unsubscribe at any time.</span></label><span class="err" data-ar="يلزم الموافقة للمتابعة.">Please give consent to continue.</span></div>
+          </div>
+          <div class="form-foot"><small data-ar="نستخدم بياناتك لإرسال المستجدات التي تختارها فقط.">We use your details only to send the updates you choose.</small><button type="submit" class="btn btn-primary btn-lg"><span data-ar="سجّل الآن">Register now</span></button></div>
+          <p class="send-err" hidden data-ar="تعذّر إرسال النموذج. تحقّق من اتصالك وحاول مرة أخرى.">We couldn't send your form. Check your connection and try again.</p>
+        </div>
+        <div class="thanks" hidden tabindex="-1">
+          <svg class="ic"><use href="#i-check-circle"/></svg>
+          <h3 data-ar="تم تسجيلك">You're registered</h3>
+          <p class="muted" data-ar="شكرًا لك، وستصلك مستجدات الافتتاح باللغة التي اخترتها.">Thank you — we'll send opening updates in your chosen language.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================================================== ABOUT -->
+<main id="view-about" data-page="about" hidden>
+  <section class="page-hero">
+    <div class="wrap">
+      
+      <h1 data-ar="مستشفى جديد، مصمَّم للرياض">A new hospital, designed for Riyadh</h1>
+      <p data-ar="مستشفى سيكنتيف مستشفى عام خاص في الرياض، يقوم على ثلاثة التزامات: رعاية سليمة سريريًا، ويسيرة الوصول، وواضحة في كل خطوة.">Sikentif Hospital is a private general hospital in Riyadh, built around three commitments: care that is clinically sound, easy to reach, and clear at every step.</p>
+    </div>
+  </section>
+  <section class="section" id="story">
+    <div class="wrap split">
+      <div class="section-head"><h2 data-ar="رعاية آمنة وواضحة ومتصلة">Safe, clear, connected care</h2></div>
+      <div class="prose">
+        <p style="font-size:1.12rem;color:var(--green)" data-ar="أن نقدّم لسكان الرياض وعائلاتهم رعاية صحية آمنة وعالية الجودة، يسهل الوصول إليها وفهمها، وتستمر بعد انتهاء الزيارة.">To provide Riyadh's residents and families with safe, high-quality healthcare that is easy to reach, easy to understand, and continues beyond the visit.</p>
+        <p data-ar="تنمو الرياض بوتيرة متسارعة، وتحتاج عائلاتها إلى رعاية صحية خاصة يسهل الوصول إليها وتحظى بثقتها. وسيكنتيف مستشفى عام يجمع بين الخبرة السريرية وتجربة واضحة ومتصلة للمريض.">Riyadh is growing quickly, and its families need private healthcare they can reach easily and trust. Sikentif is a general hospital that combines clinical expertise with a clear, connected patient experience.</p>
+        <p class="mini-h" data-ar="رؤيتنا">Our vision</p>
+        <blockquote class="vq" data-ar="بناء مؤسسة رعاية صحية حديثة في الرياض تجمع بين رعاية طبية عالية الجودة وتجربة صحية مريحة ومتصلة تتمحور حول المريض.">To build a modern healthcare institution in Riyadh that combines high-quality medical care with a convenient, connected and patient-focused healthcare experience.</blockquote>
+      </div>
+    </div>
+  </section>
+  <section class="section lt tight" id="values">
+    <div class="wrap">
+      <div class="head-split"><div class="section-head"><h2 data-ar="ما نلتزم به">What we hold ourselves to</h2></div></div>
+      <div class="grid-3" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+        <article class="card"><h3 data-ar="السلامة أولًا">Safety first</h3><p data-ar="كل قرار يبدأ بسلامة المريض.">Every decision starts with patient safety.</p></article>
+        <article class="card"><h3 data-ar="الوضوح">Clarity</h3><p data-ar="معلومات واضحة باللغتين العربية والإنجليزية، قبل الرعاية وأثناءها وبعدها.">Plain information in Arabic and English, before, during and after care.</p></article>
+        <article class="card"><h3 data-ar="الاحترام">Respect</h3><p data-ar="رعاية تحترم خصوصية المرضى وثقافتهم وتفضيلاتهم، ومنها جنس الطبيب متى أمكن.">Care that respects patients' privacy, culture and preferences, including clinician gender where possible.</p></article>
+        <article class="card"><h3 data-ar="المسؤولية">Accountability</h3><p data-ar="معلومات واضحة عن التكاليف وأوقات الانتظار والخطوات التالية، وإجابات صريحة عند حدوث أي خطأ.">Clear information on costs, waiting times and next steps, and honest answers when something goes wrong.</p></article>
+        <article class="card"><h3 data-ar="الاستمرارية">Continuity</h3><p data-ar="رعاية مترابطة بين العيادات والتشخيص والصيدلية والمتابعة.">Care that connects clinics, diagnostics, pharmacy and follow-up.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section lt" id="quality">
+    <div class="wrap split">
+      <div class="section-head"><h2 data-ar="الجودة وسلامة المرضى">Quality and patient safety</h2></div>
+      <div class="prose">
+        <p data-ar="الجودة جزء من تصميم المستشفى وطريقة تشغيله.">Quality is built into how the hospital is designed and run.</p>
+        <ul class="checks">
+          <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="سلامة المريض أولًا في كل قرار">Patient safety first in every decision</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="ممارسة سريرية مبنية على الأدلة">Evidence-based clinical practice</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="تواصل شفاف مع المرضى وذويهم">Transparent communication with patients and families</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="تحسين مستمر وقياس للأداء">Continuous improvement and measurement</span></li>
+        </ul>
+        <p data-ar="تُدرج هنا الاعتمادات فور منحها.">Accreditations will be listed here as they are awarded.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section tight" id="leadership">
+    <div class="wrap split">
+      <div class="section-head"><h2 data-ar="فريق القيادة">Leadership team</h2></div>
+      <div class="prose"><p data-ar="نعرّف هنا قريبًا بفريق القيادة والهيكل الحوكمي.">Our leadership team and governance structure will be introduced here.</p><div><a href="#register" class="btn btn-primary"><span data-ar="التسجيل للمستجدات">Register for updates</span></a></div></div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================================================== SERVICES -->
+<main id="view-services" data-page="services" hidden>
+  <section class="page-hero">
+    <div class="wrap">
+      
+      <h1 data-ar="خدماتنا">Our services</h1>
+      <p data-ar="خدمات الطوارئ والعيادات الخارجية والتشخيص والجراحة والتنويم والصيدلية، منسّقة حول كل مريض وتُقدَّم باللغتين العربية والإنجليزية.">Emergency, outpatient, diagnostic, surgical, inpatient and pharmacy services, coordinated around each patient and delivered in Arabic and English.</p>
+    </div>
+  </section>
+  <section class="section" id="svc-list">
+    <div class="wrap">
+      <div class="notice-bar"><svg class="ic"><use href="#i-alert"/></svg><span data-ar="يفتتح مستشفى سيكنتيف قريبًا ولا يستقبل المرضى حاليًا. وللحصول على الرعاية اليوم: الاتصال بالرقم 997 أو 911 في الحالات الطارئة، أو بالرقم 937 للاستشارات الصحية.">Sikentif Hospital opens soon and is not yet accepting patients. For care today, call 997 or 911 in an emergency, or 937 for health advice.</span></div>
+      <div class="grid-2">
+        <article class="card"><h3 data-ar="رعاية الطوارئ">Emergency care</h3><p data-ar="قسم طوارئ يعمل على مدار الساعة للبالغين والأطفال، بفرز سريع وتواصل واضح مع العائلات وارتباط مباشر بخدمات التشخيص والجراحة.">A 24-hour emergency department for adults and children, with fast triage, clear communication with families, and direct links to diagnostics and surgery.</p>
+          <ul class="checks"><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="الفرز والعلاج على مدار الساعة">Triage and treatment around the clock</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="وصول مباشر إلى خدمات الأشعة والمختبر">Direct access to imaging and laboratory services</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="ارتباط بفرق الاستشاريين والتنويم">Links to specialist and inpatient teams</span></li></ul></article>
+        <article class="card"><h3 data-ar="العيادات الخارجية">Outpatient clinics</h3><p data-ar="عيادات تخصصية للاستشارات والمتابعة والرعاية المستمرة، مع إمكانية الحجز عبر الموقع أو التطبيق أو الهاتف.">Specialist clinics for consultations, follow-up and ongoing care, bookable online, in the app or by phone.</p>
+          <ul class="checks"><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="الاستشارات الجديدة ومواعيد المتابعة">New consultations and follow-up visits</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="رعاية الأمراض المزمنة">Care for long-term conditions</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="العربية والإنجليزية في كل عيادة">Arabic and English at every clinic</span></li></ul></article>
+        <article class="card"><h3 data-ar="التشخيص">Diagnostics</h3><p data-ar="خدمات مختبر وأشعة للتشخيص السريع والدقيق لمرضى العيادات والتنويم والطوارئ.">Laboratory and imaging services for fast, accurate diagnosis across clinic, inpatient and emergency care.</p>
+          <ul class="checks"><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="التحاليل المخبرية">Laboratory testing</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="الأشعة، ومنها الأشعة السينية والموجات فوق الصوتية والأشعة المقطعية">Imaging including X-ray, ultrasound and CT</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="مشاركة النتائج بأمان مع طبيبك وعبر تطبيق المريض">Results shared securely with your doctor and in the patient app</span></li></ul></article>
+        <article class="card"><h3 data-ar="الجراحة">Surgery</h3><p data-ar="رعاية جراحية في عدد من التخصصات، تشمل جراحات اليوم الواحد متى كان ذلك مناسبًا سريريًا.">Surgical care across a range of specialties, including day surgery where clinically appropriate.</p>
+          <ul class="checks"><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="التقييم قبل العملية">Pre-operative assessment</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="جراحات اليوم الواحد">Day surgery</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="التعافي والمتابعة بعد العملية">Post-operative recovery and follow-up</span></li></ul></article>
+        <article class="card"><h3 data-ar="التنويم">Inpatient care</h3><p data-ar="أجنحة تنويم مصمَّمة للراحة والخصوصية ومشاركة العائلة.">Inpatient wards designed for comfort, privacy and family involvement.</p>
+          <ul class="checks"><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="غرف خاصة ومشتركة">Private and shared rooms</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="ترتيبات زيارة العائلة">Family visiting arrangements</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="التخطيط للخروج والمتابعة">Discharge planning and follow-up</span></li></ul></article>
+        <article class="card"><h3 data-ar="الصيدلية">Pharmacy</h3><p data-ar="صيدلية داخلية تخدم المرضى المنوَّمين والمراجعين.">An in-hospital pharmacy serving inpatients and outpatients.</p>
+          <ul class="checks"><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="صرف الأدوية للمراجعين">Dispensing for outpatients</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="إرشاد دوائي واضح بالعربية والإنجليزية">Clear medicine advice in Arabic and English</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="إعادة صرف الوصفات عبر التطبيق والموقع الإلكتروني">Prescription refills through the app and website</span></li></ul></article>
+        <article class="card"><h3 data-ar="الفحص والرعاية الوقائية">Screening &amp; preventive care</h3><p data-ar="برامج فحص صحي للأفراد والعائلات، تركّز على الاكتشاف المبكر ونمط الحياة الصحي، بأسعار باقات واضحة بالريال السعودي.">Health checks and screening programmes for individuals and families, focused on early detection and healthy living, with clear package prices in SAR.</p>
+          <ul class="checks"><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="باقات الفحص الصحي">Health check packages</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="الكشف المبكر عن الأمراض الشائعة">Screening for common conditions</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="إرشادات حول نمط الحياة والوقاية">Advice on lifestyle and prevention</span></li></ul></article>
+        <article class="card"><h3 data-ar="الوصول إلى الاستشاريين">Specialist access</h3><p data-ar="مراجعة الاستشاريين في مختلف تخصصاتنا، مع تنسيق التحويلات وطلبات الرأي الطبي الثاني من خلال المستشفى.">See specialists across our specialties, with referrals and second opinions coordinated by the hospital.</p>
+          <p><a class="link-arrow" href="#specialties"><span data-ar="تخصصاتنا">Our specialties</span><svg class="ic flip"><use href="#i-arrow"/></svg></a></p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section lt" id="specialties">
+    <div class="wrap">
+      <div class="head-split"><div class="section-head"><h2 data-ar="تخصصاتنا">Our specialties</h2></div></div>
+      <div class="spec-grid">
+        <div class="spec"><h3 data-ar="أمراض القلب">Cardiology</h3></div>
+        <div class="spec"><h3 data-ar="جراحة العظام">Orthopaedics</h3></div>
+        <div class="spec"><h3 data-ar="طب الأطفال">Paediatrics</h3></div>
+        <div class="spec"><h3 data-ar="الطب الباطني">Internal medicine</h3></div>
+        <div class="spec"><h3 data-ar="الأمراض الجلدية">Dermatology</h3></div>
+        <div class="spec"><h3 data-ar="النساء والولادة">Obstetrics and gynaecology</h3></div>
+        <div class="spec"><h3 data-ar="الجراحة العامة">General surgery</h3></div>
+        <div class="spec"><h3 data-ar="طب العيون">Ophthalmology</h3></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="digital">
+    <div class="wrap digital-grid">
+      <div>
+        <div class="head-split"><div class="section-head"><h2 data-ar="الرعاية الرقمية">Digital care</h2><p class="lede" data-ar="احجز، واطّلع على النتائج، وجدّد الوصفات، وادفع من تطبيق واحد، باللغتين العربية والإنجليزية.">Book, check results, renew prescriptions and pay from one app, in Arabic and English.</p></div></div>
+        <div class="dcards">
+          <article class="dcard"><svg class="ic"><use href="#i-phone"/></svg><div><h3 data-ar="تطبيق المريض">Patient mobile app</h3><p data-ar="وصول رقمي إلى المواعيد والمعلومات الصحية وخدمات المرضى.">Digital access to appointments, health information and patient services.</p></div></article>
+          <article class="dcard"><svg class="ic"><use href="#i-portal"/></svg><div><h3 data-ar="بوابة المريض">Patient portal</h3><p data-ar="واجهة رقمية آمنة للتواصل مع المستشفى.">A secure digital interface for interacting with the hospital.</p></div></article>
+          <article class="dcard"><svg class="ic"><use href="#i-calendar"/></svg><div><h3 data-ar="حجز المواعيد إلكترونيًا">Online booking</h3><p data-ar="جدولة المواعيد وإدارتها رقميًا.">Digital appointment scheduling and management.</p></div></article>
+          <article class="dcard"><svg class="ic"><use href="#i-video"/></svg><div><h3 data-ar="الاستشارات عن بُعد">Telehealth</h3><p data-ar="استشارات رقمية ومتابعة عن بُعد.">Digital consultations and remote follow-up.</p></div></article>
+          <article class="dcard"><svg class="ic"><use href="#i-card"/></svg><div><h3 data-ar="المدفوعات الرقمية">Digital payments</h3><p data-ar="تجارب دفع رقمية مريحة وآمنة.">Convenient, secure digital payments.</p></div></article>
+          <article class="dcard"><svg class="ic"><use href="#i-pill"/></svg><div><h3 data-ar="الصيدلية الرقمية">Digital pharmacy</h3><p data-ar="خدمات وصفات وصيدلية مترابطة.">Connected prescription and pharmacy services.</p></div></article>
+        </div>
+        <div class="row-ctas"><a href="#register" class="btn btn-primary js-interest" data-interest="services"><span data-ar="احصل على مستجدات الافتتاح">Get opening updates</span></a><a href="#patients" class="btn btn-clay"><span data-ar="معلومات المرضى">Patient information</span></a></div>
+      </div>
+      <div>
+        <div class="phone" aria-hidden="true"><div class="screen">
+          <div class="scr-top"><small data-ar="معاينة مبدئية">Concept preview</small><b data-ar="رعايتك، متصلة">Your care, connected</b></div>
+          <div class="scr-body">
+            <div class="scr-tiles"><div class="scr-tile"><svg class="ic"><use href="#i-calendar"/></svg><span data-ar="احجز زيارة">Book a visit</span></div><div class="scr-tile"><svg class="ic"><use href="#i-video"/></svg><span data-ar="استشارة عن بُعد">Telehealth</span></div><div class="scr-tile"><svg class="ic"><use href="#i-doc"/></svg><span data-ar="نتائج المختبر">Lab reports</span></div><div class="scr-tile"><svg class="ic"><use href="#i-pill"/></svg><span data-ar="الوصفات">Prescriptions</span></div></div>
+            <div class="scr-card"><b data-ar="الموعد القادم">Upcoming appointment</b><i data-ar="مثال">Example</i></div>
+            <div class="scr-card"><b data-ar="المدفوعات">Payments</b><i data-ar="مثال">Example</i></div>
+          </div>
+        </div></div>
+        <p class="phone-cap" data-ar="شاشات توضيحية للتطبيق">Illustrative app screens</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================================================== PATIENTS -->
+<main id="view-patients" data-page="patients" hidden>
+  <section class="page-hero">
+    <div class="wrap">
+      
+      <h1 data-ar="معلومات المرضى">Patient information</h1>
+      <p data-ar="كل ما تحتاج معرفته قبل زيارتك، من التأمين والفواتير إلى الزيارة وحقوق المرضى.">Everything you need to know before your visit, from insurance and billing to visiting and patient rights.</p>
+    </div>
+  </section>
+  <section class="section" id="need-care">
+    <div class="wrap">
+      <div class="head-split"><div class="section-head"><h2 data-ar="هل تحتاج إلى رعاية الآن؟">Need care now?</h2></div></div>
+      <div class="notice-bar"><svg class="ic"><use href="#i-alert"/></svg><span data-ar="يفتتح مستشفى سيكنتيف قريبًا، ولا يستقبل المرضى أو المواعيد حاليًا.">Sikentif Hospital opens soon and is not yet accepting patients or appointments.</span></div>
+      <div class="grid-3">
+        <div class="bignum alert"><span class="n">997 · 911</span><h3 data-ar="في الحالات الطارئة">In an emergency</h3><p data-ar="الاتصال بالرقم 997 (هيئة الهلال الأحمر السعودي) أو 911، أو التوجّه إلى أقرب قسم طوارئ.">Call 997 (Saudi Red Crescent) or 911, or go to your nearest emergency department.</p></div>
+        <div class="bignum"><span class="n">937</span><h3 data-ar="للاستشارات الصحية">For health advice</h3><p data-ar="مركز اتصال وزارة الصحة على الرقم 937، على مدار الساعة.">Call the Ministry of Health call centre on 937, available 24 hours a day.</p></div>
+        <div class="bignum"><span class="n" style="font-size:2rem" data-ar="صحتي">Sehhaty</span><h3 data-ar="لحجز المواعيد">For appointments</h3><p data-ar="الحجز في المنشآت الصحية القائمة عبر تطبيق صحتي.">Book at existing healthcare facilities through the Sehhaty app.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section lt" id="insurance">
+    <div class="wrap split">
+      <div class="section-head"><h2 data-ar="التأمين والفوترة">Insurance and billing</h2></div>
+      <div class="prose">
+        <p data-ar="سنتعامل مع كبرى شركات التأمين الخاضعة لمجلس الضمان الصحي، إلى جانب خيارات الدفع المباشر، وتُنشر قائمة شركات التأمين هنا.">We will work with major insurers regulated by the Council of Health Insurance (CHI), alongside self-pay options. Our insurer list will be published here.</p>
+        <ul class="checks">
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b data-ar="موافقات التأمين:">Insurance approvals:</b> <span data-ar="يساعد فريقنا في التحقق من الأهلية والحصول على الموافقات قبل العلاج عند الحاجة.">Our team will help with eligibility checks and approvals before treatment where needed.</span></span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b data-ar="تقديرات واضحة:">Clear estimates:</b> <span data-ar="تقدير مكتوب للتكلفة قبل الإجراءات المجدولة، بالريال السعودي.">Written cost estimates before scheduled procedures, in Saudi riyals (SAR).</span></span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b data-ar="الدفع:">Payment:</b> <span data-ar="خيارات الدفع بالبطاقات والوسائل الرقمية، ومنها مدى.">Card and digital payment options, including mada.</span></span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b data-ar="الدفع المباشر:">Self-pay:</b> <span data-ar="أسعار واضحة ومعلنة للاستشارات وباقات الفحص الصحي.">Transparent, published prices for consultations and health check packages.</span></span></li>
+        </ul>
+        <div><a href="#register" class="btn btn-primary js-interest" data-interest="insurance"><span data-ar="أبلغني بشأن شركة تأميني">Tell me about my insurer</span></a></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="visit">
+    <div class="wrap">
+      <div class="head-split"><div class="section-head"><h2 data-ar="زيارتك خطوة بخطوة">Your visit, step by step</h2><p class="lede" data-ar="هكذا تبدو زيارة العيادات الخارجية المعتادة في سيكنتيف.">What a typical outpatient visit looks like at Sikentif.</p></div></div>
+      <ol class="tl steps">
+        <li><small data-ar="الخطوة 1">Step 1</small><b data-ar="الحجز">Book</b><p data-ar="اختيار العيادة والموعد عبر الموقع أو التطبيق أو الهاتف.">Choose a clinic and time online, in the app or by phone.</p></li>
+        <li><small data-ar="الخطوة 2">Step 2</small><b data-ar="الاستعداد">Prepare</b><p data-ar="رسالة تذكير تتضمن إرشادات الوصول والمواقف وما يلزم إحضاره.">Receive a reminder with directions, parking information and what to bring.</p></li>
+        <li><small data-ar="الخطوة 3">Step 3</small><b data-ar="الوصول">Arrive</b><p data-ar="تسجيل سريع عند الاستقبال أو عبر جهاز الخدمة الذاتية.">Check in quickly at reception or a self-service point.</p></li>
+        <li><small data-ar="الخطوة 4">Step 4</small><b data-ar="الموعد">Your appointment</b><p data-ar="مقابلة الطبيب، مع تسجيل النتائج والوصفات في مكان واحد.">See your doctor, with results and prescriptions recorded in one place.</p></li>
+        <li><small data-ar="الخطوة 5">Step 5</small><b data-ar="بعد الزيارة">After your visit</b><p data-ar="تذكيرات بالمتابعة، ومتابعة عن بُعد عند الحاجة، وفاتورة واضحة.">Follow-up reminders, telehealth check-ins where suitable, and a clear bill.</p></li>
+      </ol>
+    </div>
+  </section>
+  <section class="section lt" id="visitor">
+    <div class="wrap grid-3" style="align-items:start">
+      <article class="card plain"><h3 data-ar="معلومات الزوار">Visitor information</h3><p data-ar="تُنشر هنا مواعيد الزيارة والمواقف والإرشادات، وتشمل المرافق:">Visiting hours, parking and wayfinding will be published here. Facilities include:</p>
+        <ul class="checks"><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="مصلَّيات للرجال والنساء">Prayer rooms for men and women</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="مناطق انتظار للعائلات">Family waiting areas</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="مواقف للمرضى والزوار مع منطقة إنزال">Patient and visitor parking with a drop-off area</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-ar="وصول دون عوائق ومرافق مهيأة لذوي الإعاقة">Step-free access and accessible facilities throughout</span></li></ul></article>
+      <article class="card plain"><h3 data-ar="اللغة وإمكانية الوصول">Language &amp; accessibility</h3><p data-ar="رعاية باللغتين العربية والإنجليزية بشكل أساسي، مع دعم الترجمة للغات أخرى. والمبنى والموقع الإلكتروني مصمَّمان ليكونا متاحين للجميع.">Care in Arabic and English as standard, with interpreter support for other languages. The building and website are designed to be accessible to everyone.</p></article>
+      <article class="card plain"><h3 data-ar="حقوق المرضى ومسؤولياتهم">Patient rights &amp; responsibilities</h3><p data-ar="تتوافق حقوق المرضى ومسؤولياتهم لدينا مع وثيقة حقوق المرضى ومسؤولياتهم الصادرة عن وزارة الصحة.">Our patient rights and responsibilities follow the Ministry of Health's Patient Bill of Rights and Responsibilities.</p></article>
+    </div>
+  </section>
+  <section class="section" id="faqs">
+    <div class="wrap split">
+      <div class="section-head"><h2 data-ar="أسئلة المرضى الشائعة">Patient FAQs</h2><div class="row-ctas" style="margin-top:.4rem"><a href="#register" class="btn btn-primary"><span data-ar="التسجيل للمستجدات">Register for updates</span></a><a href="#contact" class="btn btn-clay"><span data-ar="تواصل معنا">Contact us</span></a></div></div>
+      <div class="faq">
+        <details><summary data-ar="متى سيفتتح مستشفى سيكنتيف؟">When will Sikentif open?</summary><p data-ar="نعلن موعد الافتتاح هنا ولجميع المسجّلين في المستجدات.">We'll announce the opening date here and to everyone registered for updates.</p></details>
+        <details><summary data-ar="هل يمكن حجز موعد الآن؟">Can I book an appointment now?</summary><p data-ar="ليس بعد. يُفتح الحجز قبيل الافتتاح عبر الموقع والتطبيق والهاتف.">Not yet. Booking opens shortly before we open, online, in the app and by phone.</p></details>
+        <details><summary data-ar="هل ستقبلون تأميني؟">Will you accept my insurance?</summary><p data-ar="سنتعامل مع كبرى شركات التأمين الخاضعة لمجلس الضمان الصحي، ويمكن ذكر شركة تأمينك عند التسجيل لنبلغك.">We will work with major CHI-regulated insurers. Tell us your insurer when you register, and we'll let you know.</p></details>
+        <details><summary data-ar="هل ستتوفر طبيبات لصحة المرأة؟">Will female doctors be available for women's health?</summary><p data-ar="طب النساء والولادة من تخصصاتنا، ونراعي تفضيلات المرضى بشأن جنس الطبيب قدر الإمكان.">Obstetrics and gynaecology is one of our specialties, and we respect patient preferences for clinician gender wherever possible.</p></details>
+        <details><summary data-ar="أين يقع المستشفى تحديدًا؟">Where exactly is the hospital?</summary><p data-ar="في الرياض، ويُنشر العنوان الكامل هنا ويُرسل إلى المسجّلين.">In Riyadh. The full address will be shared here and with registered users.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================================================== UPDATES -->
+<main id="view-updates" data-page="updates" hidden>
+  <section class="page-hero">
+    <div class="wrap">
+      
+      <h1 data-ar="المستجدات والأخبار">Updates &amp; news</h1>
+      <p data-ar="أخبار وإعلانات مستشفى سيكنتيف، بالتاريخين الهجري والميلادي.">News and announcements from Sikentif Hospital, dated in Hijri and Gregorian.</p>
+    </div>
+  </section>
+  <section class="section" id="sharing">
+    <div class="wrap split">
+      <div class="section-head"><h2 data-ar="تحديثات مؤرخة وواضحة">Dated, open updates</h2></div>
+      <div class="prose">
+        <ul class="checks">
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b data-ar="هذه الصفحة:">This page:</b> <span data-ar="السجل الكامل للإعلانات، من الأحدث إلى الأقدم.">the full record of announcements, newest first.</span></span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b data-ar="البريد الإلكتروني أو الرسائل النصية أو واتساب:">Email, SMS or WhatsApp:</b> <span data-ar="للمسجّلين، بالعربية أو الإنجليزية.">for people who register, in Arabic or English.</span></span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b data-ar="البيانات الصحفية:">Media releases:</b> <span data-ar="للإعلانات الرئيسية، عبر المركز الإعلامي.">for major announcements, through the media centre.</span></span></li>
+        </ul>
+        <p class="mini-h" data-ar="التزاماتنا">Our commitments</p>
+        <ul class="checks">
+          <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="يحمل كل خبر تاريخه.">Every update carries a date.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="لا نعلن إلا ما تم تأكيده.">We only announce what is confirmed.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="لا يُعلن موعد الافتتاح إلا بعد اعتماده.">Opening dates are announced only once final.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="إذا تغيّر أي أمر، نوضّح ذلك بشفافية في هذه الصفحة.">If something changes, we say so openly on this page.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="news">
+    <div class="wrap split">
+      <div class="section-head"><h2 data-ar="الإعلانات">Announcements</h2><a href="#register" class="btn btn-primary"><span data-ar="التسجيل للمستجدات">Register for updates</span></a></div>
+      <ul class="news js-news" style="margin-top:0"></ul>
+    </div>
+  </section>
+  <section class="section lt" id="media">
+    <div class="wrap grid-2">
+      <article class="card plain"><h3 data-ar="المركز الإعلامي">Media centre</h3><p data-ar="للاستفسارات الإعلامية، يُرجى التواصل مع فريقنا الإعلامي عبر البريد أدناه. وتتوفر الهوية البصرية بشعارَيها العربي والإنجليزي عند الطلب.">For media enquiries, contact our media team at the address below. A brand kit with both logo lockups is available on request.</p><span class="ph js-site js-copy" data-k="emailMedia"></span><div><a href="#contact" class="link-arrow js-subject" data-subject="media"><span data-ar="تواصل مع الفريق الإعلامي">Contact the media team</span><svg class="ic flip"><use href="#i-arrow"/></svg></a></div></article>
+      <article class="card plain"><h3 data-ar="الفعاليات">Events</h3><p data-ar="ستُدرج هنا الجلسات المجتمعية وأيام التوظيف فور تحديد مواعيدها.">Community sessions and recruitment days will be listed here as they are scheduled.</p><div><a href="#register" class="link-arrow"><span data-ar="التسجيل للمستجدات">Register for updates</span><svg class="ic flip"><use href="#i-arrow"/></svg></a></div></article>
+    </div>
+  </section>
+</main>
+
+<!-- ===================================================== CAREERS -->
+<main id="view-careers" data-page="careers" hidden>
+  <section class="page-hero">
+    <div class="wrap">
+      
+      <h1 data-ar="انضم إلى سيكنتيف">Join Sikentif</h1>
+      <p data-ar="انضم إلى الفريق الذي يفتتح مستشفى سيكنتيف. تُعلن الوظائف هنا، وبالانضمام إلى مجتمع المواهب يصلك الإعلان أولًا.">Join the team opening Sikentif Hospital. Roles will be advertised here; join the talent community to hear first.</p>
+    </div>
+  </section>
+  <section class="section" id="working">
+    <div class="wrap split">
+      <div class="section-head"><h2 data-ar="شارك في بناء مستشفى من اليوم الأول">Help shape a hospital from day one</h2></div>
+      <div class="prose">
+        <p data-ar="المستشفى الجديد فرصة نادرة للمشاركة في صياغة طريقة تقديم الرعاية منذ اليوم الأول، مع مسارات تطوير للكفاءات الوطنية والخريجين.">A new hospital is a rare chance to shape how care is delivered from day one — with development paths for Saudi talent and graduates.</p>
+        <p class="mini-h" data-ar="المجالات التي سنوظف فيها">Areas we'll hire in</p>
+        <div class="cats" style="margin-top:0"><span data-ar="الأطباء">Physicians</span><span data-ar="التمريض">Nursing</span><span data-ar="المهن الصحية المساندة">Allied health</span><span data-ar="الإدارة">Administration</span><span data-ar="تقنية المعلومات والرقمنة">IT &amp; digital</span><span data-ar="المرافق والخدمات المساندة">Facilities &amp; support services</span></div>
+        <div class="notice-bar" style="margin:1rem 0 0"><svg class="ic"><use href="#i-info"/></svg><span data-ar="لا توجد وظائف متاحة حاليًا، وبالانضمام إلى مجتمع المواهب يصلك الإعلان أولًا.">No roles are open yet. Join the talent community to hear first.</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="section lt" id="talent">
+    <div class="wrap split">
+      <div class="section-head"><h2 data-ar="سجّل اهتمامك">Register your interest</h2></div>
+      <form class="form js-form" id="talentForm" data-form="careers" novalidate>
+        <div class="form-body">
+          <div class="hp" aria-hidden="true"><label>Website <input name="website_hp" tabindex="-1" autocomplete="off"></label></div>
+          <div class="fields">
+            <div class="field full"><label for="t-name"><span data-ar="الاسم الكامل">Full name</span> <i>*</i></label><input id="t-name" data-rule="name" placeholder="First and last name" data-ar-ph="الاسم الأول واسم العائلة" required autocomplete="name"><span class="err" data-ar="يرجى إدخال الاسم الكامل.">Please enter your full name.</span></div>
+            <div class="field"><label for="t-email"><span data-ar="البريد الإلكتروني">Email</span> <i>*</i></label><input id="t-email" type="email" data-rule="email" autocomplete="email" placeholder="name@example.com" required dir="ltr"><span class="err" data-ar="يرجى إدخال بريد إلكتروني صحيح، مثل &lt;bdi dir=&quot;ltr&quot;&gt;name@example.com&lt;/bdi&gt;">Enter a valid email, e.g. name@example.com</span></div>
+            <div class="field"><label for="t-mobile"><span data-ar="رقم الجوال">Mobile number</span> <i>*</i></label><input id="t-mobile" type="tel" inputmode="tel" data-rule="mobile-intl" autocomplete="tel" placeholder="+966 5X XXX XXXX" required dir="ltr"><small class="help" data-ar="خارج السعودية؟ أضف رمز الدولة">Outside Saudi Arabia? Include your country code</small><span class="err" data-ar="يرجى إدخال رقم جوال سعودي أو رقم دولي مع رمز الدولة">Enter a Saudi mobile number, or an international number with its country code</span></div>
+            <div class="field"><label for="t-area"><span data-ar="المجال">Area</span> <i>*</i></label><select id="t-area" required><option value="" data-ar="اختر المجال">Select an area</option><option value="physicians" data-ar="الأطباء">Physicians</option><option value="nursing" data-ar="التمريض">Nursing</option><option value="allied" data-ar="المهن الصحية المساندة">Allied health</option><option value="admin" data-ar="الإدارة">Administration</option><option value="it" data-ar="تقنية المعلومات والرقمنة">IT &amp; digital</option><option value="facilities" data-ar="المرافق والخدمات المساندة">Facilities &amp; support services</option></select><span class="err" data-ar="يرجى اختيار المجال.">Please choose an area.</span></div>
+            <div class="field"><label for="t-role" data-ar="التخصص أو المسمى الوظيفي">Specialty or role</label><input id="t-role" placeholder="e.g. Paediatric nurse" data-ar-ph="مثال: تمريض أطفال"></div>
+            <div class="field"><label for="t-years" data-ar="سنوات الخبرة">Years of experience</label><select id="t-years"><option value="" data-ar="اختر">Select</option><option>0–2</option><option>3–5</option><option>6–10</option><option data-ar="أكثر من 10">More than 10</option></select></div>
+            <div class="field" data-area-group="clinical" hidden><label for="t-scfhs" data-ar="تصنيف الهيئة السعودية للتخصصات الصحية">SCFHS classification</label><select id="t-scfhs"><option value="" data-ar="اختر">Select</option><option data-ar="نعم">Yes</option><option data-ar="قيد الإجراء">In progress</option><option data-ar="لا">No</option></select></div>
+            <div class="field full"><label for="t-cv" data-ar="السيرة الذاتية (PDF أو Word)">CV (PDF or Word)</label><input id="t-cv" type="file" accept=".pdf,.doc,.docx" data-max-mb="5"><small class="help" data-ar="الحد الأقصى 5 ميجابايت">Maximum 5 MB</small><span class="err" data-ar="يرجى رفع ملف PDF أو Word لا يتجاوز 5 ميجابايت">Upload a PDF or Word file under 5 MB</span></div>
+            <div class="field full"><label class="consent"><input type="checkbox" required> <span data-ar="أوافق على أن يحتفظ مستشفى سيكنتيف ببياناتي وسيرتي الذاتية مدة أقصاها سنتان للتواصل معي بشأن الوظائف المناسبة، وفقًا &lt;a href=&quot;#privacy&quot;&gt;لسياسة الخصوصية&lt;/a&gt;.">I agree that Sikentif Hospital may keep my details and CV for up to 2 years to contact me about suitable roles, in line with the <a href="#privacy">Privacy Policy</a>.</span></label><span class="err" data-ar="يلزم الموافقة للمتابعة.">Please give consent to continue.</span></div>
+          </div>
+          <div class="form-foot"><small data-ar="لا نتقاضى أي رسوم في أي مرحلة من مراحل التوظيف.">We never charge fees at any stage of recruitment.</small><button type="submit" class="btn btn-primary btn-lg"><span data-ar="انضم إلى مجتمع المواهب">Join the talent community</span></button></div>
+          <p class="send-err" hidden data-ar="تعذّر إرسال النموذج. تحقّق من اتصالك وحاول مرة أخرى.">We couldn't send your form. Check your connection and try again.</p>
+        </div>
+        <div class="thanks" hidden tabindex="-1"><svg class="ic"><use href="#i-check-circle"/></svg><h3 data-ar="شكرًا لانضمامك">Thank you for joining</h3><p class="muted" data-ar="سنتواصل معك عند الإعلان عن وظائف في مجالك.">We'll contact you when roles in your area are announced.</p></div>
+      </form>
+    </div>
+  </section>
+  <section class="section tight" id="fraud">
+    <div class="wrap">
+      <div class="notice-bar" style="margin:0;border-color:#A3321F"><svg class="ic" style="color:#A3321F"><use href="#i-alert"/></svg>
+        <span><b data-ar="تنبيه بشأن الاحتيال في التوظيف:">Recruitment fraud notice:</b> <span data-ar="لا يتقاضى مستشفى سيكنتيف أي رسوم في أي مرحلة من مراحل التوظيف، ولا يتواصل مع المرشحين إلا عبر عناوين البريد الرسمية. ويُرجى الإبلاغ عن أي عروض مشبوهة عبر:">Sikentif Hospital never charges fees at any stage of recruitment and only contacts candidates from official email addresses. Report suspicious offers to:</span> <bdi class="js-site" data-k="emailCareers"></bdi></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================================================== PARTNERS (technology partners) -->
+<main id="view-partners" data-page="partners" hidden>
+  <section class="page-hero pp-hero">
+    <div class="wrap">
+      <h1 data-ar="شركاء التقنية">Technology partners</h1>
+      <p data-ar="يقيّم مستشفى سيكنتيف مزوّدي التطبيقات الصحية والبرمجيات كخدمة والمواقع الإلكترونية وحلول الصحة الرقمية لمستشفاه في الرياض. إذا كانت شركتكم تخدم المستشفيات أو العيادات أو الصيدليات، فعرّفونا بمنتجاتكم وأسعاركم وخبرتكم في السوق السعودي من خلال الاستبيان.">Sikentif Hospital is assessing healthcare app, SaaS, website and digital health providers for its hospital in Riyadh. If your company serves hospitals, clinics or pharmacies, tell us about your products, pricing and Saudi experience through our questionnaire.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold btn-lg" data-form-link href="#" target="_blank" rel="noopener"><span data-ar="افتح الاستبيان">Open the questionnaire</span> <svg class="ic flip"><use href="#i-external"/></svg></a>
+        <a class="btn btn-sand-line btn-lg" href="#pp-prep"><span data-ar="ما تحتاجونه قبل البدء">What you'll need</span></a>
+      </div>
+      <p class="pp-meta" data-ar="30 سؤالًا · نحو 15–20 دقيقة · باللغة الإنجليزية · عبر نماذج Google">30 questions · about 15–20 minutes · in English · on Google Forms</p>
+      <p class="notice js-form-notice" hidden data-ar="سيُتاح الاستبيان قريبًا. وحتى ذلك الحين، يمكنكم &lt;a href=&quot;#contact&quot; class=&quot;js-subject&quot; data-subject=&quot;partners&quot;&gt;التعريف بشركتكم عبر نموذج التواصل&lt;/a&gt;.">The questionnaire opens shortly. Until then, you can <a href="#contact" class="js-subject" data-subject="partners">introduce your company through the contact form</a>.</p>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap pp-who">
+      <h2 data-ar="من ندعوه للمشاركة">Who we'd like to hear from</h2>
+      <ul class="who-list">
+        <li data-ar="تطبيقات المرضى وبواباتهم">Patient apps and portals</li>
+        <li data-ar="مواقع المستشفيات">Hospital websites</li>
+        <li data-ar="أنظمة معلومات المستشفيات ومنصات البرمجيات كخدمة">Hospital information and SaaS platforms</li>
+        <li data-ar="الحجز والتطبيب عن بُعد">Booking and telemedicine</li>
+        <li data-ar="تقنيات الصيدليات">Pharmacy technology</li>
+        <li data-ar="إدارة علاقات المرضى والتواصل معهم">CRM and patient engagement</li>
+        <li data-ar="التحليلات والذكاء الاصطناعي">Analytics and AI</li>
+        <li data-ar="المدفوعات والتكامل">Payments and integration</li>
+      </ul>
+      <p class="muted pp-small" data-ar="تخدمون العيادات أو الصيدليات فقط؟ يسعدنا تلقّي ردّكم أيضًا، إذ يتضمن الاستبيان أسئلة عن هذه الفئات.">Only serve clinics or pharmacies? We'd still like to hear from you; the questionnaire covers those too.</p>
+    </div>
+  </section>
+
+  <section class="section lt" id="pp-prep">
+    <div class="wrap pp-grid">
+      <div>
+        <h2 data-ar="قبل البدء">Before you start</h2>
+        <p class="lede" style="margin-top:.8rem" data-ar="يُنهي معظم الشركات الاستبيان في جلسة واحدة إذا توفّرت لديها المعلومات التالية. وتكفي التقديرات عند عدم توفّر أرقام دقيقة.">Most companies finish in one sitting if they have the following to hand. Estimates are fine where exact figures aren't available.</p>
+        <ol class="prep">
+          <li><b data-ar="بيانات الشركة">Company basics</b><span data-ar="المقر الرئيسي وسنة التأسيس وعدد الموظفين، والحضور في السعودية (كيان قانوني أو مكتب أو فريق).">Headquarters, year founded, headcount, and your presence in Saudi Arabia (entity, office or team).</span></li>
+          <li><b data-ar="أعداد العملاء">Client numbers</b><span data-ar="المستشفيات والعيادات والصيدليات النشطة إجمالًا وفي السعودية، مع ما يصل إلى ثلاث جهات مرجعية.">Active hospitals, clinics and pharmacies, in total and in Saudi Arabia, plus up to three reference clients.</span></li>
+          <li><b data-ar="الأسعار بالريال السعودي">Pricing in SAR</b><span data-ar="دون ضريبة القيمة المضافة، لمستشفى خاص مرجعي بسعة 200 سرير في الرياض: رسوم الإعداد والاشتراك والإضافات، والتكلفة في السنة الأولى والتكلفة السنوية بعدها.">Excluding VAT, for a reference 200-bed private hospital in Riyadh: setup fee, subscription, add-ons, and first-year and ongoing annual cost.</span></li>
+          <li><b data-ar="التكامل والاستضافة">Integration and hosting</b><span data-ar="حالة التكامل مع أنظمة المعلومات الصحية والسجلات الطبية ونفيس ومدى ونفاذ، وموقع استضافة البيانات.">Status of HIS/EMR, NPHIES, mada and Nafath integrations, and where your data is hosted.</span></li>
+          <li><b data-ar="روابط المستندات">Document links</b><span data-ar="الملف التعريفي وكتيّب المنتج وقائمة الأسعار ودراسات الحالة، عبر Google Drive أو OneDrive أو Dropbox أو موقعكم الإلكتروني.">Company profile, product brochure, pricing sheet and case studies, shared from Google Drive, OneDrive, Dropbox or your website.</span></li>
+        </ol>
+      </div>
+      <aside class="apply-card" aria-label="Partner questionnaire" data-ar-aria="استبيان الشركاء">
+        <h3 data-ar="استبيان الشركاء">Partner questionnaire</h3>
+        <dl class="pp-facts">
+          <div><dt data-ar="الطول">Length</dt><dd data-ar="30 سؤالًا في 11 قسمًا">30 questions in 11 sections</dd></div>
+          <div><dt data-ar="المدة">Time</dt><dd data-ar="نحو 15–20 دقيقة">About 15–20 minutes</dd></div>
+          <div><dt data-ar="اللغة">Language</dt><dd data-ar="الإنجليزية">English</dd></div>
+          <div><dt data-ar="الصيغة">Format</dt><dd data-ar="نماذج Google، في نافذة جديدة">Google Forms, new tab</dd></div>
+        </dl>
+        <a class="btn btn-primary btn-lg" data-form-link href="#" target="_blank" rel="noopener"><span data-ar="افتح الاستبيان">Open the questionnaire</span> <svg class="ic flip"><use href="#i-external"/></svg></a>
+        <p class="notice js-form-notice" hidden data-ar="سيُتاح الاستبيان قريبًا. وحتى ذلك الحين، يمكنكم &lt;a href=&quot;#contact&quot; class=&quot;js-subject&quot; data-subject=&quot;partners&quot;&gt;التعريف بشركتكم عبر نموذج التواصل&lt;/a&gt;.">The questionnaire opens shortly. Until then, you can <a href="#contact" class="js-subject" data-subject="partners">introduce your company through the contact form</a>.</p>
+        <p class="pp-small muted" data-ar="إذا سجّلتم الدخول بحساب Google فسيُحفظ تقدّمكم تلقائيًا، ويمكنكم تعديل الإجابات بعد الإرسال.">If you're signed in to Google, your progress saves as you go, and you can edit your answers after submitting.</p>
+        <p class="pp-small"><span data-ar="أسئلة عن الاستبيان؟">Questions about the questionnaire?</span><br><span class="js-site" data-k="emailPartners"></span></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="pp-topics">
+    <div class="wrap">
+      <div class="section-head"><h2 data-ar="محاور الاستبيان">What the questionnaire covers</h2></div>
+      <ol class="topics">
+        <li class="topic"><b data-ar="الشركة والحضور في السوق">Company and market presence</b><span data-ar="الحجم والإيرادات والحضور في السعودية">Size, revenue and Saudi presence</span></li>
+        <li class="topic"><b data-ar="العملاء في القطاع الصحي">Healthcare clients</b><span data-ar="المستشفيات والعيادات والصيدليات والجهات المرجعية">Hospitals, clinics, pharmacies and references</span></li>
+        <li class="topic"><b data-ar="نطاق المنتج">Product scope</b><span data-ar="صيغ التقديم والوحدات الأساسية والإضافية">Delivery formats, standard and add-on modules</span></li>
+        <li class="topic"><b data-ar="العلامة البيضاء والملكية">White-label and ownership</b><span data-ar="العلامة التجارية وملكية البيانات وشروط الإنهاء">Branding, data ownership and exit terms</span></li>
+        <li class="topic"><b data-ar="التسعير">Pricing</b><span data-ar="رسوم الإعداد والاشتراك والإضافات والتكلفة الإجمالية">Setup, subscription, add-ons and all-in cost</span></li>
+        <li class="topic"><b data-ar="الشروط التجارية">Commercial terms</b><span data-ar="مدة العقد والدفع والزيادات والخصومات">Contract length, payment, escalation and discounts</span></li>
+        <li class="topic"><b data-ar="التكامل والامتثال في السعودية">Integration and Saudi compliance</b><span data-ar="أنظمة المعلومات الصحية ونفيس ومدى والاستضافة ونظام حماية البيانات الشخصية">HIS, NPHIES, mada, hosting and PDPL</span></li>
+        <li class="topic"><b data-ar="التنفيذ والدعم">Implementation and support</b><span data-ar="مدة الإطلاق ونموذج الدعم ومستوى الخدمة">Go-live time, support model and SLAs</span></li>
+        <li class="topic"><b data-ar="المبيعات والمشتريات">Sales and procurement</b><span data-ar="دورة البيع وصنّاع القرار والتجارب">Sales cycle, decision-makers and pilots</span></li>
+        <li class="topic"><b data-ar="المشهد التنافسي">Competition</b><span data-ar="المنافسون الرئيسيون والاحتفاظ بالعملاء">Main competitors and client retention</span></li>
+        <li class="topic"><b data-ar="الطلب في السوق">Market demand</b><span data-ar="اتجاهات الاستفسارات وإنفاق المستشفيات">Enquiry trends and hospital spending</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section lt">
+    <div class="wrap">
+      <div class="section-head"><h2 data-ar="بعد الإرسال">After you submit</h2></div>
+      <ol class="tl steps4">
+        <li><small>1</small><b data-ar="التأكيد">Confirmation</b><p data-ar="تظهر رسالة تأكيد فور إرسال الاستبيان.">You'll see a confirmation as soon as you submit.</p></li>
+        <li><small>2</small><b data-ar="المراجعة">Review</b><p data-ar="يراجع فريقنا كل طلب.">Our team reviews every submission.</p></li>
+        <li><small>3</small><b data-ar="العرض التوضيحي">Demonstration</b><p data-ar="قد ندعو شركات مختارة إلى تقديم عرض توضيحي.">Shortlisted companies may be invited to present.</p></li>
+        <li><small>4</small><b data-ar="التواصل">Follow-up</b><p data-ar="نتواصل مع الشركة في حال وجود فرصة مناسبة.">We contact you if there is a relevant opportunity.</p></li>
+      </ol>
+      <div class="notice-bar" style="margin-top:1.8rem;margin-bottom:0"><svg class="ic"><use href="#i-info"/></svg><span data-ar="لم تُمنح أي شراكات تقنية حتى الآن. ويجمع الاستبيان معلومات لدعم قراراتنا التقنية، ولا يُعد مناقصة أو التزامًا.">No technology partnerships have been awarded. The questionnaire gathers information to inform our technology decisions; it is not a tender or a commitment.</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="pp-faq">
+    <div class="wrap split">
+      <div class="section-head"><h2 data-ar="أسئلة شائعة">Common questions</h2></div>
+      <div class="faq">
+        <details><summary data-ar="هل هذه مناقصة؟">Is this a tender?</summary><p data-ar="لا. هو استبيان للقدرات، وليس مناقصة أو التزامًا، ولم تُمنح أي شراكة حتى الآن.">No. It is a capability questionnaire, not a tender or a commitment, and no partnership has been awarded.</p></details>
+        <details><summary data-ar="هل يُشترط وجود حضور في السعودية؟">Do we need a presence in Saudi Arabia?</summary><p data-ar="لا يُشترط ذلك للتقديم، لكن الاستبيان يسأل عن الحضور والدعم المحلي.">It isn't required to apply, but the questionnaire asks about your local presence and support.</p></details>
+        <details><summary data-ar="هل يمكننا الحفظ والعودة لاحقًا؟">Can we save and come back later?</summary><p data-ar="نعم، إذا سجّلتم الدخول بحساب Google فسيُحفظ تقدّمكم تلقائيًا. ويساعد تجهيز المعلومات المذكورة في «قبل البدء» على إنهائه في جلسة واحدة.">Yes, if you're signed in to a Google account your progress is saved automatically. Having the items under “Before you start” ready helps you finish in one go.</p></details>
+        <details><summary data-ar="هل يمكننا تعديل الإجابات بعد الإرسال؟">Can we change our answers after submitting?</summary><p data-ar="نعم، تتيح صفحة التأكيد رابطًا لتعديل الإجابات.">Yes. The confirmation page gives you a link to edit your response.</p></details>
+        <details><summary data-ar="ماذا لو لم تتوفّر لدينا أرقام دقيقة؟">What if we don't have exact figures?</summary><p data-ar="تكفي التقديرات، ويمكن ترك الأسئلة غير الإلزامية دون إجابة.">Estimates are fine, and optional questions can be left blank.</p></details>
+        <details><summary data-ar="هل يتوفّر الاستبيان باللغة العربية؟">Is the questionnaire available in Arabic?</summary><p data-ar="الاستبيان متاح حاليًا باللغة الإنجليزية فقط.">It is currently available in English only.</p></details>
+        <details><summary data-ar="هل تُشارك معلوماتنا مع أي جهة؟">Will you share our information?</summary><p data-ar="تُستخدم الطلبات لتقييم الشركاء المحتملين فقط، وتُعالَج وفقًا لنظام حماية البيانات الشخصية.">Submissions are used only to evaluate potential partners and are handled in line with the Personal Data Protection Law (PDPL).</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section lt tight" id="other-partners">
+    <div class="wrap">
+      <div class="section-head"><h2 style="font-size:clamp(1.4rem,2.4vw,1.8rem)" data-ar="الشراكات الأخرى">Other partnerships</h2></div>
+      <dl class="other-list">
+        <div><dt data-ar="الموردون والمزوّدون">Suppliers and vendors</dt><dd data-ar="المعدات الطبية والمرافق والخدمات. يُفتح التسجيل لاحقًا.">Medical equipment, facilities and services. Registration opens later.</dd></div>
+        <div><dt data-ar="شركات التأمين">Insurers and payers</dt><dd data-ar="يُفتح باب التواصل مع اقتراب الافتتاح.">Engagement opens as we approach opening.</dd></div>
+        <div><dt data-ar="الشركاء السريريون وجهات الإحالة">Clinical and referral partners</dt><dd data-ar="يُعلن عنها لاحقًا.">To be announced.</dd></div>
+      </dl>
+      <p style="margin-top:1.2rem"><a class="link-arrow js-subject" href="#contact" data-subject="partners"><span data-ar="عرّفونا بجهتكم عبر نموذج التواصل">Introduce your organisation through the contact form</span><svg class="ic flip"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </section>
+
+  <div class="pp-sticky" aria-hidden="false">
+    <a class="btn btn-primary" data-form-link href="#" target="_blank" rel="noopener"><span data-ar="افتح استبيان الشركاء">Open the partner questionnaire</span> <svg class="ic flip"><use href="#i-external"/></svg></a>
+  </div>
+</main>
+
+<!-- ===================================================== CONTACT -->
+<main id="view-contact" data-page="contact" hidden>
+  <section class="page-hero">
+    <div class="wrap">
+      
+      <h1 data-ar="تواصل مع مستشفى سيكنتيف">Contact Sikentif Hospital</h1>
+      <p data-ar="تواصل مع الفريق المختص بالاستفسارات العامة أو الوظائف أو الموردين أو الإعلام. اختر النوع المناسب لنوجّه رسالتك.">Reach the right team for general, careers, supplier or media enquiries. Choose the option that fits and we'll route your message.</p>
+    </div>
+  </section>
+  <section class="section tight" id="routes">
+    <div class="wrap">
+      <div class="notice-bar" style="border-color:#A3321F"><svg class="ic" style="color:#A3321F"><use href="#i-alert"/></svg><span data-ar="هذه الصفحة ليست للرعاية الطبية. في الحالات الطارئة يُرجى الاتصال بالرقم 997 أو 911، أو التوجّه إلى أقرب قسم طوارئ.">This page is not for medical care. In an emergency, call 997 or 911, or go to your nearest emergency department.</span></div>
+      <div class="grid-4">
+        <article class="card plain"><h3 data-ar="الاستفسارات العامة">General enquiries</h3><p data-ar="للأسئلة المتعلقة بالمستشفى أو خططه أو هذا الموقع.">Questions about the hospital, its plans or this website.</p><a href="#contactForm" class="link-arrow js-subject js-form-jump" data-subject="general"><span data-ar="أرسل استفسارًا">Send an enquiry</span><svg class="ic flip"><use href="#i-arrow"/></svg></a></article>
+        <article class="card plain"><h3 data-ar="الاهتمام بالوظائف">Careers interest</h3><p data-ar="لا توجد وظائف متاحة حاليًا، وبالانضمام إلى مجتمع المواهب نتواصل معك عند الإعلان عن وظائف في مجالك.">No roles are open yet. Join the talent community to be contacted when roles in your area are announced.</p><a href="#talent" class="link-arrow"><span data-ar="انضم إلى مجتمع المواهب">Join the talent community</span><svg class="ic flip"><use href="#i-arrow"/></svg></a></article>
+        <article class="card plain"><h3 data-ar="الموردون والشراكات">Suppliers &amp; partnerships</h3><p data-ar="يمكن لشركات التقنية التقديم عبر استبيان الشركاء، ولبقية الموردين التعريف بجهاتهم عبر النموذج أدناه.">Technology companies apply through the partner questionnaire; other suppliers can introduce themselves using the form below.</p><a href="#partners" class="link-arrow"><span data-ar="شركاء التقنية والاستبيان">Technology partner questionnaire</span><svg class="ic flip"><use href="#i-arrow"/></svg></a></article>
+        <article class="card plain"><h3 data-ar="الاستفسارات الإعلامية">Media enquiries</h3><p data-ar="للصحفيين والجهات الإعلامية: البيانات وترتيب المقابلات ومواد الهوية البصرية.">For journalists and media: statements, interviews and brand assets.</p><a href="#contactForm" class="link-arrow js-subject js-form-jump" data-subject="media"><span data-ar="تواصل مع الفريق الإعلامي">Contact the media team</span><svg class="ic flip"><use href="#i-arrow"/></svg></a></article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap split">
+      <div style="display:grid;gap:1.8rem">
+        <div>
+          <p class="mini-h" style="margin-bottom:.6rem" data-ar="أرقام التواصل">Phone &amp; WhatsApp</p>
+          <div class="contacts">
+                        <div class="crow"><small data-ar="هاتف المكتب">Office line</small><span class="ph js-site js-copy" data-k="landline"></span></div>
+            <div class="crow"><small data-ar="واتساب">WhatsApp</small><span class="ph js-site js-copy" data-k="whatsapp"></span></div>
+          </div>
+        </div>
+        <div>
+          <p class="mini-h" style="margin-bottom:.6rem" data-ar="البريد حسب الفريق">Email by team</p>
+          <div class="contacts">
+            <div class="crow"><small data-ar="استفسارات عامة">General</small><span class="ph js-site js-copy" data-k="email"></span></div>
+            <div class="crow"><small data-ar="الشراكات">Partnerships</small><span class="ph js-site js-copy" data-k="emailPartners"></span></div>
+            <div class="crow"><small data-ar="الوظائف">Careers</small><span class="ph js-site js-copy" data-k="emailCareers"></span></div>
+            <div class="crow"><small data-ar="الإعلام">Media</small><span class="ph js-site js-copy" data-k="emailMedia"></span></div>
+          </div>
+        </div>
+        <div>
+          <p class="mini-h" style="margin-bottom:.6rem" data-ar="ساعات العمل">Office hours</p>
+          <p data-ar="من الأحد إلى الخميس، 8:00 ص – 5:00 م (بتوقيت الرياض)">Sunday–Thursday, 8:00–17:00 (Riyadh time)</p>
+        </div>
+        <div>
+          <p class="mini-h" style="margin-bottom:.6rem" data-ar="الموقع">Location</p>
+          <p data-ar="الرياض، المملكة العربية السعودية">Riyadh, Saudi Arabia</p>
+        </div>
+        <div>
+          <p class="mini-h" style="margin-bottom:.6rem" data-ar="يُرجى ملاحظة">Please note</p>
+          <ul class="checks">
+            <li><svg class="ic"><use href="#i-info"/></svg><span data-ar="لا يمكننا تقديم استشارات طبية أو حجز مواعيد في المرحلة الحالية.">We cannot give medical advice or book appointments at this stage.</span></li>
+            <li><svg class="ic"><use href="#i-info"/></svg><span data-ar="يُرجى عدم إرسال سجلات طبية أو معلومات صحية شخصية عبر هذا النموذج.">Please do not send medical records or personal health information through this form.</span></li>
+            <li><svg class="ic"><use href="#i-info"/></svg><span data-ar="لا يُعد إرسال الاستفسار شراكة أو اتفاقية توريد أو عرضًا وظيفيًا.">Submitting an enquiry does not create a partnership, supply agreement or offer of employment.</span></li>
+          </ul>
+        </div>
+      </div>
+      <form class="form js-form" id="contactForm" data-form="contact" novalidate>
+        <div class="form-body">
+          <h3 data-ar="أرسل استفسارًا">Send an enquiry</h3>
+          <p class="form-intro" data-ar="اختر الموضوع لتظهر الحقول المناسبة، وسنوجّه رسالتك إلى الفريق المختص.">Choose a subject to see the right fields; we'll route your message to the right team.</p>
+          <div class="hp" aria-hidden="true"><label>Website <input name="website_hp" tabindex="-1" autocomplete="off"></label></div>
+          <div class="fields">
+            <div class="field full"><label for="c-subject"><span data-ar="الموضوع">Subject</span> <i>*</i></label>
+              <select id="c-subject" required>
+                <option value="" data-ar="اختر الموضوع">Select a subject</option>
+                <option value="general" data-ar="استفسار عام">General enquiry</option>
+                <option value="tech" data-ar="شراكات التقنية والصحة الرقمية">Technology &amp; digital healthcare partnerships</option>
+                <option value="partners" data-ar="الموردون والشراكات الأخرى">Suppliers &amp; other partnerships</option>
+                <option value="careers" data-ar="الوظائف">Careers</option>
+                <option value="media" data-ar="استفسار إعلامي">Media enquiry</option>
+                <option value="other" data-ar="أخرى">Other</option>
+              </select><span class="err" data-ar="يرجى اختيار الموضوع.">Please choose a subject.</span></div>
+            <div class="field full" data-group="tech" hidden><p class="field-note" data-ar="تتقدّم شركات التقنية عبر استبيان الشركاء المخصص. &lt;a href=&quot;#partners&quot;&gt;صفحة شركاء التقنية&lt;/a&gt;">Technology companies apply through the dedicated partner questionnaire. <a href="#partners">Go to the technology partner page</a></p></div>
+            <div class="field full" data-group="careers" hidden><p class="field-note" data-ar="لا توجد وظائف متاحة حاليًا، ويمكنك الانضمام إلى مجتمع المواهب. &lt;a href=&quot;#talent&quot;&gt;انضم إلى مجتمع المواهب&lt;/a&gt;">No roles are open yet — you can join the talent community. <a href="#talent">Join the talent community</a></p></div>
+            <div class="field full"><label for="c-name"><span data-ar="الاسم الكامل">Full name</span> <i>*</i></label><input id="c-name" data-rule="name" placeholder="First and last name" data-ar-ph="الاسم الأول واسم العائلة" autocomplete="name" required><span class="err" data-ar="يرجى إدخال الاسم الكامل.">Please enter your full name.</span></div>
+            <div class="field" data-hide-for="partners,media"><label for="c-org" data-ar="الجهة">Organisation</label><input id="c-org" autocomplete="organization"></div>
+            <div class="field"><label for="c-email"><span data-ar="البريد الإلكتروني">Email</span> <i>*</i></label><input id="c-email" type="email" data-rule="email" autocomplete="email" placeholder="name@example.com" required dir="ltr"><span class="err" data-ar="يرجى إدخال بريد إلكتروني صحيح، مثل &lt;bdi dir=&quot;ltr&quot;&gt;name@example.com&lt;/bdi&gt;">Enter a valid email, e.g. name@example.com</span></div>
+            <div class="field"><label for="c-phone"><span data-ar="الهاتف">Phone</span> <i class="req-if" hidden>*</i></label><input id="c-phone" type="tel" inputmode="tel" data-rule="phone" data-required-if="c-subject:partners,media" autocomplete="tel" placeholder="+966 5X XXX XXXX" dir="ltr"><span class="err" data-ar="يرجى إدخال رقم هاتف صحيح مع رمز الدولة">Enter a valid phone number, including the country code</span></div>
+            <!-- Supplier fields -->
+            <div class="field" data-group="partners" hidden><label for="s-company"><span data-ar="اسم الشركة">Company name</span> <i>*</i></label><input id="s-company" required autocomplete="organization"><span class="err" data-ar="هذا الحقل مطلوب.">This field is required.</span></div>
+            <div class="field" data-group="partners" hidden><label for="s-category"><span data-ar="الفئة">Category</span> <i>*</i></label><select id="s-category" required><option value="" data-ar="اختر الفئة">Select a category</option><option data-ar="المعدات الطبية">Medical equipment</option><option data-ar="الأدوية والمستلزمات">Pharmaceuticals &amp; consumables</option><option data-ar="المرافق والصيانة">Facilities &amp; maintenance</option><option data-ar="الإعاشة والخدمات المساندة">Catering &amp; support services</option><option data-ar="الخدمات المهنية">Professional services</option><option data-ar="أخرى">Other</option></select><span class="err" data-ar="هذا الحقل مطلوب.">This field is required.</span></div>
+            <div class="field" data-group="partners" hidden><label for="s-web" data-ar="الموقع الإلكتروني للشركة">Company website</label><input id="s-web" type="url" data-rule="url" placeholder="https://" dir="ltr"><span class="err" data-ar="يجب أن يبدأ الرابط بـ https://">The address must start with https://</span></div>
+            <div class="field" data-group="partners" hidden><label for="s-cr" data-ar="رقم السجل التجاري">Commercial Registration number</label><input id="s-cr" inputmode="numeric" data-rule="cr" dir="ltr"><span class="err" data-ar="يتكون رقم السجل التجاري من 10 أرقام">A Saudi CR number has 10 digits</span></div>
+            <div class="field" data-group="partners" hidden><label for="s-sfda" data-ar="تسجيل الهيئة العامة للغذاء والدواء (إن وجد)">SFDA registration (if applicable)</label><select id="s-sfda"><option value="" data-ar="اختر">Select</option><option data-ar="نعم">Yes</option><option data-ar="لا">No</option><option data-ar="لا ينطبق">Not applicable</option></select></div>
+            <div class="field" data-group="partners" hidden><label for="s-profile" data-ar="الملف التعريفي للشركة (PDF)">Company profile (PDF)</label><input id="s-profile" type="file" accept=".pdf" data-max-mb="5"><span class="err" data-ar="يرجى رفع ملف PDF لا يتجاوز 5 ميجابايت">Upload a PDF under 5 MB</span></div>
+            <!-- Media fields -->
+            <div class="field" data-group="media" hidden><label for="m-outlet"><span data-ar="الجهة الإعلامية">Media outlet</span> <i>*</i></label><input id="m-outlet" required><span class="err" data-ar="هذا الحقل مطلوب.">This field is required.</span></div>
+            <div class="field" data-group="media" hidden><label for="m-type"><span data-ar="نوع الطلب">Request type</span> <i>*</i></label><select id="m-type" required><option value="" data-ar="اختر">Select</option><option data-ar="بيان">Statement</option><option data-ar="مقابلة">Interview</option><option data-ar="مواد الهوية البصرية">Brand assets</option><option data-ar="أخرى">Other</option></select><span class="err" data-ar="هذا الحقل مطلوب.">This field is required.</span></div>
+            <div class="field" data-group="media" hidden><label for="m-deadline" data-ar="الموعد النهائي">Deadline</label><input id="m-deadline" type="date" dir="ltr"></div>
+            <div class="field full"><label for="c-msg"><span class="js-msg-label" data-ar="الرسالة">Message</span> <i>*</i></label><textarea id="c-msg" data-rule="message" required></textarea><small class="help" data-ar="يُرجى عدم إضافة معلومات صحية.">Please don't include health information.</small><span class="err" data-ar="يرجى إضافة تفاصيل أكثر (10 أحرف على الأقل).">Please add a little more detail (at least 10 characters).</span></div>
+            <div class="field full"><label class="consent"><input type="checkbox" required> <span data-ar="اطلعت على &lt;a href=&quot;#privacy&quot;&gt;سياسة الخصوصية&lt;/a&gt;، وأوافق على أن يعالج مستشفى سيكنتيف بياناتي للرد على هذا الطلب.">I have read the <a href="#privacy">Privacy Policy</a> and agree that Sikentif Hospital may process my details to respond to this request.</span></label><span class="err" data-ar="يلزم الموافقة للمتابعة.">Please give consent to continue.</span></div>
+            <div class="field full"><label class="consent"><input type="checkbox" name="optin"> <span data-ar="أرغب كذلك في تلقي مستجدات الافتتاح.">Also send me opening updates.</span></label></div>
+          </div>
+          <div class="form-foot"><small data-ar="هذا النموذج ليس للرعاية الطبية، وفي الحالات الطارئة يُرجى الاتصال بالرقم 997 أو 911. &lt;a href=&quot;#disclaimer&quot;&gt;إخلاء المسؤولية الطبية&lt;/a&gt;">This form is not for medical care. In an emergency, call 997 or 911. <a href="#disclaimer">Medical disclaimer</a></small><button type="submit" class="btn btn-primary btn-lg"><span data-ar="إرسال الاستفسار">Submit enquiry</span></button></div>
+          <p class="send-err" hidden data-ar="تعذّر إرسال النموذج. تحقّق من اتصالك وحاول مرة أخرى.">We couldn't send your form. Check your connection and try again.</p>
+        </div>
+        <div class="thanks" hidden tabindex="-1"><svg class="ic"><use href="#i-check-circle"/></svg><h3 data-ar="شكرًا لتواصلك مع مستشفى سيكنتيف">Thank you for contacting Sikentif Hospital</h3><p class="muted js-thanks-msg"></p></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ===================================================== LEGAL -->
+<main id="view-privacy" data-page="legal" hidden>
+  <section class="section"><div class="wrap legal">
+    
+    <h1 style="font-size:clamp(2rem,4vw,3rem)" data-ar="سياسة الخصوصية">Privacy Policy</h1>
+    <p class="muted" data-ar="تاريخ السريان: [تاريخ السريان]">Effective date: [Effective date]</p>
+    <div class="notice-bar draft-note"><svg class="ic"><use href="#i-info"/></svg><span data-ar="مسودة — تخضع لمراجعة المستشار القانوني قبل الإطلاق. وفي حال وجود اختلاف بين النسختين تكون الغلبة للنسخة العربية.">Draft — subject to review by legal counsel before launch. If the Arabic and English versions differ, the Arabic version prevails.</span></div>
+    <h2 data-ar="1. من نحن">1. Who we are</h2>
+    <p data-ar="تدير هذا الموقع [اسم الجهة النظامية]، سجل تجاري رقم [رقم السجل التجاري]، [العنوان الوطني]، الرياض، المملكة العربية السعودية («مستشفى سيكنتيف» أو «نحن»). ويمر مستشفى سيكنتيف بمرحلة التخطيط والتطوير، ولا يقدّم الرعاية الطبية بعد. ونعالج البيانات الشخصية وفقًا لنظام حماية البيانات الشخصية ولوائحه التنفيذية.">This website is operated by [Legal entity name], Commercial Registration [CR number], [National Address], Riyadh, Saudi Arabia (“Sikentif Hospital”, “we”, “us”). Sikentif Hospital is in the planning and development stage and does not yet provide medical care. We process personal data in line with the Personal Data Protection Law (PDPL) and its implementing regulations.</p>
+    <h2 data-ar="2. نطاق هذه السياسة">2. What this policy covers</h2>
+    <p data-ar="توضّح هذه السياسة كيفية تعاملنا مع البيانات الشخصية التي نجمعها عبر هذا الموقع، بما في ذلك التسجيل للمستجدات ونماذج الاستفسار ومجتمع المواهب واستبيان شركاء التقنية. ولا تشمل السجلات الطبية للمرضى، التي ستخضع لإشعار مستقل عند افتتاح المستشفى.">This policy explains how we handle personal data collected through this website, including the updates sign-up, enquiry forms, the careers talent community and the technology partner questionnaire. It does not cover patient medical records, which will be governed by a separate notice once the hospital opens.</p>
+    <h2 data-ar="3. البيانات التي نجمعها">3. What we collect</h2>
+    <ul class="checks">
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="&lt;b&gt;التسجيل للمستجدات:&lt;/b&gt; الاسم، ورقم الجوال، والبريد الإلكتروني، واهتماماتك والموضوعات التي تختارها، وشركة التأمين (اختياري)، ووسيلة التواصل واللغة المفضلتين."><b>Register for updates:</b> name, mobile number, email, your interests and topics, your insurer (optional), preferred channel and language.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="&lt;b&gt;نماذج الاستفسار (العامة والموردين والإعلام):&lt;/b&gt; الاسم، والجهة، والبريد الإلكتروني، والهاتف، والموضوع، والرسالة؛ وللموردين: اسم الشركة وفئتها وموقعها الإلكتروني ورقم السجل التجاري وتسجيل الهيئة العامة للغذاء والدواء والملف التعريفي؛ وللإعلام: الوسيلة الإعلامية والموعد النهائي."><b>Enquiry forms (general, supplier, media):</b> name, organisation, email, phone, subject and message; for suppliers, company name, category, website, CR number, SFDA registration and company profile; for media, outlet and deadline.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="&lt;b&gt;مجتمع المواهب:&lt;/b&gt; الاسم، والبريد الإلكتروني، ورقم الجوال، ومجال الاهتمام، والتخصص أو المسمى، وسنوات الخبرة، ورقم التصنيف المهني لدى الهيئة السعودية للتخصصات الصحية (للأدوار السريرية)، والسيرة الذاتية."><b>Careers talent community:</b> name, email, mobile number, area of interest, specialty or role, years of experience, SCFHS registration number (clinical roles) and CV.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="&lt;b&gt;استبيان شركاء التقنية:&lt;/b&gt; بيانات التواصل المهنية ومعلومات عن الشركة ومنتجاتها."><b>Technology partner questionnaire:</b> business contact details and information about your company and products.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="&lt;b&gt;تلقائيًا:&lt;/b&gt; تفضيل اللغة المحفوظ في متصفحك، وسجلات تقنية أساسية يحتفظ بها مزوّد الاستضافة لأغراض الأمان (عنوان IP، ونوع المتصفح، والتاريخ والوقت)."><b>Automatically:</b> your language preference, stored in your browser; and basic technical logs kept by our hosting provider for security (IP address, browser type, date and time).</span></li>
+    </ul>
+    <p data-ar="لا نجمع معلومات صحية عبر هذا الموقع، ويُرجى عدم إرسال سجلات طبية أو تفاصيل صحية عبر أي نموذج.">We do not collect health information through this website. Please do not send medical records or health details through any form.</p>
+    <h2 data-ar="4. كيف نستخدم بياناتك">4. How we use your data</h2>
+    <ul class="checks">
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="لإرسال المستجدات التي طلبتها (بناءً على موافقتك).">To send the updates you asked for (based on your consent).</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="للرد على استفسارك أو طلب الشراكة (للتعامل مع طلبك).">To respond to your enquiry or partnership submission (to handle your request).</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="للنظر في ترشيحك لوظائف مستقبلية (بناءً على موافقتك).">To consider you for future roles (based on your consent).</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="للحفاظ على أمان الموقع والوفاء بالتزاماتنا النظامية.">To keep the website secure and meet our legal obligations.</span></li>
+    </ul>
+    <p data-ar="لا نبيع البيانات الشخصية، ولا نستخدمها لاتخاذ قرارات آلية بشأنك.">We do not sell personal data or use it for automated decisions about you.</p>
+    <h2 data-ar="5. مع من نشارك بياناتك">5. Who we share it with</h2>
+    <p data-ar="لا نشارك البيانات الشخصية إلا مع مزوّدي الخدمات الذين يساعدوننا في تشغيل هذا الموقع وإرسال الرسائل (الاستضافة والبريد الإلكتروني والرسائل النصية وواتساب وأدوات النماذج)، بموجب عقود تلزمهم بحمايتها. وقد نفصح عن البيانات للجهات الحكومية عندما يقتضي النظام ذلك.">We share personal data only with service providers that help us run this website and send communications (hosting, email, SMS, WhatsApp and form tools), under contracts that require them to protect it. We may also disclose data to government authorities when the law requires it.</p>
+    <h2 data-ar="6. مكان حفظ بياناتك">6. Where your data is stored</h2>
+    <p data-ar="نسعى إلى حفظ البيانات الشخصية داخل المملكة العربية السعودية. وإذا حفظ أحد مزوّدي الخدمات البيانات خارج المملكة، فلا ننقلها إلا بالقدر الذي يسمح به نظام حماية البيانات الشخصية ولوائحه.">We aim to store personal data in Saudi Arabia. Where a service provider stores data outside the Kingdom, we transfer it only as permitted by the PDPL and its regulations.</p>
+    <h2 data-ar="7. مدة الاحتفاظ بالبيانات">7. How long we keep it</h2>
+    <div class="tbl-wrap"><table class="ltable"><thead><tr><th data-ar="البيانات">Data</th><th data-ar="مدة الاحتفاظ">Kept for</th></tr></thead><tbody><tr><td data-ar="التسجيل للمستجدات">Updates sign-up</td><td data-ar="حتى إلغاء الاشتراك، أو [12 شهرًا] بعد افتتاح المستشفى">Until you unsubscribe, or [12 months] after the hospital opens</td></tr><tr><td data-ar="الاستفسارات">Enquiries</td><td data-ar="[سنتان] بعد الرد">[2 years] after we respond</td></tr><tr><td data-ar="مجتمع المواهب">Talent community</td><td data-ar="[سنتان]، أو حتى طلب الحذف">[2 years], or until you ask us to delete it</td></tr><tr><td data-ar="طلبات الشراكة">Partner submissions</td><td data-ar="[3 سنوات] من تاريخ التقديم">[3 years] after submission</td></tr><tr><td data-ar="سجلات الأمان">Security logs</td><td data-ar="[90 يومًا]">[90 days]</td></tr></tbody></table></div>
+    <h2 data-ar="8. حقوقك">8. Your rights</h2>
+    <p data-ar="يمنحك نظام حماية البيانات الشخصية الحق في العلم بكيفية استخدام بياناتك، والوصول إليها والحصول على نسخة منها، وتصحيحها، وطلب إتلافها عند انتفاء الحاجة إليها، والرجوع عن موافقتك في أي وقت. ولممارسة هذه الحقوق يُرجى مراسلة &lt;bdi class=&quot;js-site&quot; data-k=&quot;emailPrivacy&quot;&gt;&lt;/bdi&gt;، وسنرد خلال المدة المحددة نظامًا. ويحق لك كذلك تقديم شكوى إلى الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا).">Under the PDPL you have the right to be informed about how your data is used, to access and obtain a copy of it, to correct it, to ask us to destroy it when it is no longer needed, and to withdraw your consent at any time. To use these rights, email <bdi class="js-site" data-k="emailPrivacy"></bdi>; we will respond within the period set by law. You may also complain to the Saudi Data and AI Authority (SDAIA).</p>
+    <h2 data-ar="9. أمن البيانات">9. Security</h2>
+    <p data-ar="نطبّق تدابير تقنية وتنظيمية لحماية البيانات الشخصية، منها الاتصال المشفّر (HTTPS) وتقييد الوصول إلى محتوى النماذج.">We use technical and organisational measures to protect personal data, including encrypted connections (HTTPS) and restricted access to form submissions.</p>
+    <h2 data-ar="10. الأطفال">10. Children</h2>
+    <p data-ar="نماذجنا مخصصة لمن بلغوا 18 عامًا فأكثر، ويمكن لولي الأمر التسجيل للمستجدات نيابةً عن أسرته.">Our forms are intended for people aged 18 and over. A parent or guardian may register for updates on behalf of their family.</p>
+    <h2 data-ar="11. التعديلات على هذه السياسة">11. Changes to this policy</h2>
+    <p data-ar="ننشر أي تعديلات في هذه الصفحة مع تاريخ سريان جديد، ونرسل التعديلات الجوهرية كذلك إلى المسجّلين للمستجدات.">We will post any changes on this page with a new effective date. Significant changes will also be sent to people registered for updates.</p>
+    <h2 data-ar="12. التواصل">12. Contact</h2>
+    <p data-ar="الاستفسارات المتعلقة بالخصوصية: &lt;bdi class=&quot;js-site&quot; data-k=&quot;emailPrivacy&quot;&gt;&lt;/bdi&gt; · [اسم الجهة النظامية]، [العنوان الوطني]، الرياض، المملكة العربية السعودية.">Privacy questions: <bdi class="js-site" data-k="emailPrivacy"></bdi> · [Legal entity name], [National Address], Riyadh, Saudi Arabia.</p>
+  </div></section>
+</main>
+<main id="view-terms" data-page="legal" hidden>
+  <section class="section"><div class="wrap legal">
+    
+    <h1 style="font-size:clamp(2rem,4vw,3rem)" data-ar="شروط الاستخدام">Terms of Use</h1>
+    <p class="muted" data-ar="تاريخ السريان: [تاريخ السريان]">Effective date: [Effective date]</p>
+    <div class="notice-bar draft-note"><svg class="ic"><use href="#i-info"/></svg><span data-ar="مسودة — تخضع لمراجعة المستشار القانوني قبل الإطلاق. وفي حال وجود اختلاف بين النسختين تكون الغلبة للنسخة العربية.">Draft — subject to review by legal counsel before launch. If the Arabic and English versions differ, the Arabic version prevails.</span></div>
+    <h2 data-ar="1. القبول">1. Acceptance</h2>
+    <p data-ar="باستخدامك هذا الموقع فإنك توافق على هذه الشروط، وإذا كنت لا توافق عليها فيُرجى عدم استخدام الموقع. وتدير الموقع [اسم الجهة النظامية]، سجل تجاري رقم [رقم السجل التجاري].">By using this website you agree to these terms. If you do not agree, please do not use the website. The website is operated by [Legal entity name], Commercial Registration [CR number].</p>
+    <h2 data-ar="2. عن هذا الموقع">2. About this website</h2>
+    <p data-ar="يمر مستشفى سيكنتيف بمرحلة التخطيط والتطوير. ويعرض هذا الموقع معلومات عن المستشفى المخطط له، ويتيح التسجيل للمستجدات، ويستقبل الاستفسارات. والمعلومات المتعلقة بالخدمات والتخصصات والمرافق والقدرات الرقمية استرشادية وقد تتغيّر قبل الافتتاح.">Sikentif Hospital is in the planning and development stage. This website shares information about the planned hospital, invites people to register for updates, and receives enquiries. Information about services, specialties, facilities and digital capabilities is indicative and may change before opening.</p>
+    <h2 data-ar="3. لا تُعد استشارة طبية">3. No medical advice</h2>
+    <p data-ar="لا يُعد أي محتوى في هذا الموقع استشارة طبية أو تشخيصًا أو علاجًا، ولا ينشأ عن استخدامه أي علاقة بين طبيب ومريض. يُرجى الاطلاع على &lt;a href=&quot;#disclaimer&quot;&gt;إخلاء المسؤولية الطبية&lt;/a&gt;. وفي الحالات الطارئة يُرجى الاتصال بالرقم 997 أو 911.">Nothing on this website is medical advice, diagnosis or treatment, and using it does not create a doctor–patient relationship. Please read our <a href="#disclaimer">Medical Disclaimer</a>. In an emergency, call 997 or 911.</p>
+    <h2 data-ar="4. الاستخدام المقبول">4. Acceptable use</h2>
+    <p data-ar="تتعهد بعدم القيام بما يلي:">You agree not to:</p>
+    <ul class="checks">
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="استخدام الموقع لأي غرض غير نظامي أو بما يخالف الأنظمة السعودية؛">use the website for any unlawful purpose or in breach of Saudi law;</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="تقديم معلومات غير صحيحة أو مضللة أو تخص شخصًا آخر؛">submit false, misleading or someone else's information;</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="رفع شيفرات ضارة، أو محاولة الوصول غير المصرّح به، أو تعطيل الموقع؛">upload malicious code, attempt to gain unauthorised access, or disrupt the website;</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="نسخ المحتوى أو استخراجه بكميات كبيرة دون إذن كتابي منا.">copy or scrape content in bulk without our written permission.</span></li>
+    </ul>
+    <h2 data-ar="5. ما تقدّمه عبر الموقع">5. Your submissions</h2>
+    <p data-ar="أنت مسؤول عن دقة ما تقدّمه. ولا يُنشئ تقديم أي نموذج، بما في ذلك استبيان شركاء التقنية، عقدًا أو مناقصة أو شراكة أو اتفاقية توريد أو عرضًا وظيفيًا، ولسنا ملزمين بالرد على أي طلب أو اتخاذ إجراء بشأنه. ونتعامل مع الطلبات وفقًا &lt;a href=&quot;#privacy&quot;&gt;لسياسة الخصوصية&lt;/a&gt;.">You are responsible for the accuracy of what you submit. Submitting a form, including the technology partner questionnaire, does not create a contract, tender, partnership, supply agreement or offer of employment, and we are not obliged to respond to or act on any submission. We handle submissions in line with our <a href="#privacy">Privacy Policy</a>.</p>
+    <h2 data-ar="6. الملكية الفكرية">6. Intellectual property</h2>
+    <p data-ar="اسم سيكنتيف وشعاراته ونصوص هذا الموقع ورسومه وتصميمه مملوكة لـ [اسم الجهة النظامية] أو للجهات المرخِّصة لها. ويمكنك عرض الصفحات ومشاركتها للاستخدام الشخصي غير التجاري، ويتطلب أي استخدام آخر إذنًا كتابيًا منا.">The Sikentif name, logos, text, illustrations and design of this website belong to [Legal entity name] or its licensors. You may view and share pages for personal, non-commercial use. Any other use requires our written permission.</p>
+    <h2 data-ar="7. الروابط إلى مواقع أخرى">7. Links to other websites</h2>
+    <p data-ar="قد نضع روابط لمواقع أخرى، مثل الخدمات الصحية الحكومية، ولسنا مسؤولين عن محتواها أو ممارساتها في الخصوصية.">We may link to other websites, such as government health services. We are not responsible for their content or privacy practices.</p>
+    <h2 data-ar="8. حدود المسؤولية">8. Limitation of liability</h2>
+    <p data-ar="نعمل على إبقاء هذا الموقع دقيقًا ومتاحًا، دون ضمان خلوّه من الأخطاء أو استمراره دون انقطاع. وفي حدود ما تسمح به أنظمة المملكة العربية السعودية، لا نتحمل أي مسؤولية عن أي خسارة تنشأ عن استخدام هذا الموقع أو الاعتماد عليه.">We work to keep this website accurate and available but do not guarantee that it will be error-free or uninterrupted. To the extent permitted by the laws of Saudi Arabia, we are not liable for any loss arising from use of, or reliance on, this website.</p>
+    <h2 data-ar="9. التعديلات">9. Changes</h2>
+    <p data-ar="يجوز لنا تعديل هذه الشروط في أي وقت بنشر نسخة جديدة في هذه الصفحة مع تاريخ سريان جديد.">We may update these terms at any time by posting a new version on this page with a new effective date.</p>
+    <h2 data-ar="10. النظام الواجب التطبيق">10. Governing law</h2>
+    <p data-ar="تخضع هذه الشروط لأنظمة المملكة العربية السعودية، وتختص المحاكم المختصة في مدينة الرياض بالنظر في أي نزاع.">These terms are governed by the laws of the Kingdom of Saudi Arabia. Disputes are subject to the jurisdiction of the competent courts in Riyadh.</p>
+    <h2 data-ar="11. اللغة">11. Language</h2>
+    <p data-ar="تُنشر هذه الشروط باللغتين العربية والإنجليزية، وفي حال وجود اختلاف بينهما تكون الغلبة للنسخة العربية.">These terms are published in Arabic and English. If the two versions differ, the Arabic version prevails.</p>
+    <h2 data-ar="12. التواصل">12. Contact</h2>
+    <p data-ar="&lt;bdi class=&quot;js-site&quot; data-k=&quot;email&quot;&gt;&lt;/bdi&gt; · [اسم الجهة النظامية]، [العنوان الوطني]، الرياض، المملكة العربية السعودية."><bdi class="js-site" data-k="email"></bdi> · [Legal entity name], [National Address], Riyadh, Saudi Arabia.</p>
+  </div></section>
+</main>
+<main id="view-cookies" data-page="legal" hidden>
+  <section class="section"><div class="wrap legal">
+    
+    <h1 style="font-size:clamp(2rem,4vw,3rem)" data-ar="سياسة ملفات تعريف الارتباط">Cookie Policy</h1>
+    <p class="muted" data-ar="تاريخ السريان: [تاريخ السريان]">Effective date: [Effective date]</p>
+    <div class="notice-bar draft-note"><svg class="ic"><use href="#i-info"/></svg><span data-ar="مسودة — تخضع لمراجعة المستشار القانوني قبل الإطلاق. وفي حال وجود اختلاف بين النسختين تكون الغلبة للنسخة العربية.">Draft — subject to review by legal counsel before launch. If the Arabic and English versions differ, the Arabic version prevails.</span></div>
+    <p data-ar="لا يستخدم هذا الموقع ملفات تعريف ارتباط إعلانية أو تحليلية. ونحفظ في متصفحك إعدادًا واحدًا فقط هو اللغة المفضلة (العربية أو الإنجليزية)، ليفتح الموقع باللغة التي اخترتها في زيارتك السابقة.">This website does not use advertising or analytics cookies. We store one small setting in your browser, your language preference (Arabic or English), so the site opens in the language you chose last time.</p>
+    <p data-ar="وهذا الإعداد ضروري لعمل الموقع، ولا يتضمن أي بيانات شخصية، ويبقى على جهازك، ويمكنك حذفه في أي وقت من إعدادات المتصفح.">This setting is essential to how the site works, contains no personal data, and stays on your device. You can clear it at any time through your browser settings.</p>
+    <div class="tbl-wrap"><table class="ltable"><thead><tr><th data-ar="الاسم">Name</th><th data-ar="الغرض">Purpose</th><th data-ar="النوع">Type</th><th data-ar="المدة">Kept</th></tr></thead><tbody><tr><td data-ar="sikentif-lang">sikentif-lang</td><td data-ar="حفظ اختيار اللغة">Remembers your language choice</td><td data-ar="ضروري (تخزين محلي)">Essential (local storage)</td><td data-ar="حتى تحذفه">Until you clear it</td></tr></tbody></table></div>
+    <p data-ar="وإذا أضفنا أدوات تحليل مستقبلًا فسنطلب موافقتك أولًا ونحدّث هذه الصفحة.">If we add analytics in future, we will ask for your consent first and update this page.</p>
+  </div></section>
+</main>
+<main id="view-accessibility" data-page="legal" hidden>
+  <section class="section"><div class="wrap legal">
+    
+    <h1 style="font-size:clamp(2rem,4vw,3rem)" data-ar="بيان إمكانية الوصول">Accessibility statement</h1>
+    <div class="notice-bar draft-note"><svg class="ic"><use href="#i-info"/></svg><span data-ar="مسودة — تخضع لمراجعة المستشار القانوني قبل الإطلاق. وفي حال وجود اختلاف بين النسختين تكون الغلبة للنسخة العربية.">Draft — subject to review by legal counsel before launch. If the Arabic and English versions differ, the Arabic version prevails.</span></div>
+    <h2 data-ar="التزامنا">Our commitment</h2>
+    <p data-ar="يسعى مستشفى سيكنتيف إلى أن يتمكن الجميع من استخدام هذا الموقع باللغتين العربية والإنجليزية، أيًا كان الجهاز المستخدم أو القدرات. ونستهدف التوافق مع المستوى AA من إرشادات إمكانية الوصول إلى محتوى الويب (WCAG 2.1).">Sikentif Hospital wants everyone to be able to use this website, in Arabic and English, whatever their device or ability. We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 at level AA.</p>
+    <h2 data-ar="ما قمنا به">What we have done</h2>
+    <ul class="checks">
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="نسختان كاملتان بالعربية (من اليمين إلى اليسار) والإنجليزية (من اليسار إلى اليمين) بالمحتوى نفسه.">Full Arabic (right-to-left) and English (left-to-right) versions with the same content.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="ألوان للنصوص والواجهة مختارة لتباين يسهّل القراءة.">Text and interface colours chosen for readable contrast.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="صفحات يمكن تصفّحها بلوحة المفاتيح وحدها، مع إطار تركيز واضح ورابط «انتقل إلى المحتوى الرئيسي».">Pages that work with a keyboard alone, with a visible focus outline and a “Skip to main content” link.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="تسميات لكل حقول النماذج، مع رسائل خطأ تُقرأ عبر قارئات الشاشة.">Labels on every form field, with error messages announced to screen readers.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="أوصاف للصور والرسوم ذات الدلالة.">Descriptions for meaningful images and illustrations.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="تصاميم تتكيّف مع الهواتف والأجهزة اللوحية وتكبير النص حتى 200%.">Layouts that adapt to phones, tablets and text enlarged to 200%.</span></li>
+    </ul>
+    <h2 data-ar="قيود معروفة">Known limitations</h2>
+    <ul class="checks">
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="استبيان شركاء التقنية مُستضاف على أداة نماذج خارجية، ومتاح حاليًا باللغة الإنجليزية فقط.">The technology partner questionnaire is hosted on a third-party form tool and is currently available in English only.</span></li>
+    </ul>
+    <h2 data-ar="الملاحظات والمساعدة">Feedback and help</h2>
+    <p data-ar="إذا وجدت صعوبة في استخدام أي جزء من الموقع، أو احتجت إلى المعلومات بصيغة أخرى، يُرجى التواصل معنا عبر &lt;bdi class=&quot;js-site&quot; data-k=&quot;emailAccess&quot;&gt;&lt;/bdi&gt; أو &lt;a href=&quot;#contact&quot;&gt;صفحة «تواصل معنا»&lt;/a&gt;. ونسعى للرد خلال 5 أيام عمل.">If you find any part of this website hard to use, or need information in another format, contact us at <bdi class="js-site" data-k="emailAccess"></bdi> or through the <a href="#contact">Contact page</a>. We aim to respond within 5 business days.</p>
+    <h2 data-ar="مبنى المستشفى">The hospital building</h2>
+    <p data-ar="يُصمَّم المستشفى بوصول دون عوائق ومرافق مهيأة لذوي الإعاقة، وستُنشر التفاصيل قبل الافتتاح.">The hospital is being designed with step-free access and accessible facilities. Details will be published before opening.</p>
+  </div></section>
+</main>
+<main id="view-disclaimer" data-page="legal" hidden>
+  <section class="section"><div class="wrap legal">
+    
+    <h1 style="font-size:clamp(2rem,4vw,3rem)" data-ar="إخلاء المسؤولية الطبية">Medical disclaimer</h1>
+    <div class="notice-bar draft-note"><svg class="ic"><use href="#i-info"/></svg><span data-ar="مسودة — تخضع لمراجعة المستشار القانوني قبل الإطلاق. وفي حال وجود اختلاف بين النسختين تكون الغلبة للنسخة العربية.">Draft — subject to review by legal counsel before launch. If the Arabic and English versions differ, the Arabic version prevails.</span></div>
+    <h2 data-ar="مستشفى سيكنتيف لم يفتح أبوابه بعد">Sikentif Hospital is not yet open</h2>
+    <p data-ar="يمر مستشفى سيكنتيف بمرحلة التخطيط والتطوير، ولا يقدّم حاليًا أي رعاية طبية أو استشارات أو تشخيص أو علاج أو وصفات طبية أو مواعيد من أي نوع.">Sikentif Hospital is in the planning and development stage. It does not currently provide medical care, consultations, diagnosis, treatment, prescriptions or appointments of any kind.</p>
+    <h2 data-ar="في الحالات الطارئة">In an emergency</h2>
+    <p data-ar="يُرجى الاتصال بالرقم &lt;b&gt;997&lt;/b&gt; (هيئة الهلال الأحمر السعودي) أو &lt;b&gt;911&lt;/b&gt;، أو التوجّه إلى أقرب قسم طوارئ. ولا يُستخدم هذا الموقع أو نماذجه في الحالات الطارئة.">Call <b>997</b> (Saudi Red Crescent) or <b>911</b>, or go to your nearest emergency department. Do not use this website or its forms in an emergency.</p>
+    <h2 data-ar="للاستشارات الصحية والمواعيد حاليًا">For health advice and appointments now</h2>
+    <ul class="checks">
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="مركز اتصال وزارة الصحة على الرقم &lt;b&gt;937&lt;/b&gt;، على مدار الساعة.">Call the Ministry of Health call centre on <b>937</b>, available 24 hours a day.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span data-ar="الحجز في المنشآت الصحية القائمة عبر تطبيق &lt;b&gt;صحتي&lt;/b&gt;.">Book at existing healthcare facilities through the <b>Sehhaty</b> app.</span></li>
+    </ul>
+    <h2 data-ar="لا تشخيص ولا استشارة طبية عبر الإنترنت">No online diagnosis or medical advice</h2>
+    <p data-ar="المعلومات الواردة في هذا الموقع عامة وتخص المستشفى المخطط له فقط، ولا تُعد استشارة طبية، ولا يجوز استخدامها لتشخيص أي حالة أو علاجها. ويُرجى دائمًا استشارة مختص صحي مؤهَّل ومرخَّص بشأن صحتك.">Information on this website is general and about the planned hospital only. It is not medical advice and must not be used to diagnose or treat any condition. Always consult a qualified, licensed healthcare professional about your health.</p>
+    <h2 data-ar="الخدمات المخطط لها استرشادية">Planned services are indicative</h2>
+    <p data-ar="الخدمات والتخصصات والمرافق والأدوات الرقمية المذكورة في هذا الموقع قيد التخطيط وقد تتغيّر قبل الافتتاح، ولا يعني ذكرها أنها متاحة.">Services, specialties, facilities and digital tools described on this website are planned and may change before opening. Their description does not mean they are available.</p>
+    <h2 data-ar="يُرجى عدم إرسال معلومات صحية">Please don&#x27;t send health information</h2>
+    <p data-ar="يُرجى عدم إرسال الأعراض أو السجلات الطبية أو أي تفاصيل صحية عبر نماذجنا أو البريد الإلكتروني أو واتساب، فلا يمكننا مراجعتها.">Do not send symptoms, medical records or other health details through our forms, email or WhatsApp. We cannot review them.</p>
+  </div></section>
+</main>
+
+<!-- ===================================================== FOOTER -->
+<footer class="footer cren-top">
+  <div class="wrap">
+    <div class="foot-top">
+      <a href="#home" class="lockup" aria-label="Sikentif Hospital — مستشفى سيكنتيف">
+        <span class="lk-en">Sikentif<small>Hospital</small></span><span class="lk-div"></span>
+        <svg aria-hidden="true" style="color:var(--gold)"><use href="#logo"/></svg><span class="lk-div"></span>
+        <span class="lk-ar" lang="ar">مستشفى سيكنتيف</span>
+      </a>
+      <p class="foot-tag">An upcoming private hospital in Riyadh <span style="opacity:.5">|</span> <span class="ar-font" lang="ar">مستشفى خاص قادم في الرياض</span></p>
+    </div>
+    <div class="foot-cols">
+      <div><h4 data-ar="المستشفى">Hospital</h4><nav><a href="#about" data-ar="عن سيكنتيف">About</a><a href="#updates" data-ar="المستجدات">Updates</a><a href="#media" data-ar="المركز الإعلامي">Media centre</a></nav></div>
+      <div><h4 data-ar="المرضى">Patients</h4><nav><a href="#need-care" data-ar="هل تحتاج إلى رعاية الآن؟">Need care now?</a><a href="#faqs" data-ar="الأسئلة الشائعة">FAQs</a><a href="#insurance" data-ar="التأمين">Insurance</a><a href="#accessibility" data-ar="إمكانية الوصول">Accessibility</a></nav></div>
+      <div><h4 data-ar="اعمل معنا">Work with us</h4><nav><a href="#careers" data-ar="الوظائف">Careers</a><a href="#talent" data-ar="مجتمع المواهب">Talent community</a><a href="#partners" data-ar="شركاء التقنية">Technology partners</a><a href="#other-partners" data-ar="الموردون">Suppliers</a></nav></div>
+      <div class="fc"><h4 data-ar="تواصل">Contact</h4>
+        <span class="l" data-ar="هاتف المكتب">Office line</span><span class="v js-site" data-k="landline"></span>
+        <span class="l" data-ar="البريد الإلكتروني">Email</span><span class="v js-site" data-k="email"></span>
+        <span class="l" data-ar="الأحد – الخميس، 8:00 – 17:00">Sun–Thu, 8:00–17:00</span>
+      </div>
+    </div>
+    <div class="legalrow">
+      <a href="#privacy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+      <a href="#terms" data-ar="شروط الاستخدام">Terms of Use</a>
+      <a href="#cookies" data-ar="سياسة ملفات تعريف الارتباط">Cookie Policy</a>
+      <a href="#accessibility" data-ar="إمكانية الوصول">Accessibility</a>
+      <a href="#disclaimer" data-ar="إخلاء المسؤولية الطبية">Medical disclaimer</a>
+      <a href="#fraud" data-ar="تنبيه الاحتيال في التوظيف">Recruitment fraud notice</a>
+      <span class="js-moh" hidden><span data-ar="ترخيص وزارة الصحة:">Ministry of Health licence:</span> <bdi class="js-site" data-k="mohLicence"></bdi></span>
+    </div>
+    <div class="disclaimer">
+      <p data-ar="يفتتح مستشفى سيكنتيف قريبًا ولا يستقبل المرضى حاليًا. وقد تتغيّر تفاصيل الخدمات قبل الافتتاح. الصور توضيحية.">Sikentif Hospital opens soon and is not yet accepting patients. Service details may change before opening. Images are illustrative.</p>
+      <p><span>© <span class="yr">2026</span></span> <span data-ar="مستشفى سيكنتيف. جميع الحقوق محفوظة.">Sikentif Hospital. All rights reserved.</span></p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+/* ======================= EDIT THESE VALUES ======================= */
+const SITE = {
+  partnerFormUrl: "https://forms.gle/REPLACE-WITH-YOUR-GOOGLE-FORM-LINK",
+  // Project stage: 0 = Planning & design, 1 = Construction, 2 = Commissioning, 3 = Opening
+  stage: 0,
+  openingDate: "",            // e.g. "2028-03-01" once confirmed; empty = "to be announced"
+  // Location: leave district/mapsUrl empty until announced
+  district: "", districtAr: "", mapsUrl: "",
+  nationalAddress: { building: "", street: "", district: "", postal: "", additional: "" },
+  unified:  "",            // 9200 unified number — add only once the hospital operates one
+  mohLicence: "",          // e.g. "1234567" — footer line appears only when filled
+  landline: "+966 11 XXX XXXX",
+  whatsapp: "+966 5X XXX XXXX",
+  email:         "info@[your-domain].sa",
+  emailPartners: "partners@[your-domain].sa",
+  emailCareers:  "careers@[your-domain].sa",
+  emailMedia:    "media@[your-domain].sa",
+  emailPrivacy:  "privacy@[your-domain].sa",
+  emailAccess:   "accessibility@[your-domain].sa",
+  // Response times shown in form success messages (business days, Sunday–Thursday)
+  responseDays: { general: 5, media: 2, partners: 10 },
+  // Newest first. Dates show in Gregorian and Hijri (Umm al-Qura) automatically.
+  updates: [
+    { date: "2026-09-29", en: "Technology partner applications open", ar: "فتح باب التقديم لشركاء التقنية",
+      enText: "Healthcare app, SaaS and website companies can now submit their capabilities.", arText: "يمكن لشركات التطبيقات الصحية والبرمجيات كخدمة والمواقع الإلكترونية تقديم قدراتها الآن." },
+    { date: "2026-09-29", en: "Talent community opens", ar: "إطلاق مجتمع المواهب",
+      enText: "Healthcare professionals can register their interest ahead of recruitment.", arText: "يمكن للكفاءات الصحية تسجيل اهتمامها قبل بدء التوظيف." },
+    { date: "2026-09-29", en: "Sikentif Hospital website launched", ar: "إطلاق الموقع الإلكتروني لمستشفى سيكنتيف",
+      enText: "Our bilingual website is live, with details of our services, patient information and careers.", arText: "أُطلق موقعنا ثنائي اللغة، ويضم تفاصيل خدماتنا ومعلومات المرضى والوظائف." }
+  ]
+};
+/* ================================================================= */
+
+(function(){
+  const app = document.getElementById('app');
+  const STAGES = [
+    { en:"Planning & design", ar:"التخطيط والتصميم", dEn:"Clinical planning, architecture and service design.", dAr:"التخطيط السريري والتصميم المعماري وتصميم الخدمات." },
+    { en:"Construction", ar:"الإنشاء", dEn:"Building works and infrastructure.", dAr:"أعمال البناء والبنية التحتية." },
+    { en:"Commissioning", ar:"التجهيز والتشغيل التجريبي", dEn:"Equipment, systems, licensing and staff readiness.", dAr:"تجهيز المعدات والأنظمة والترخيص وجاهزية الكوادر." },
+    { en:"Opening", ar:"الافتتاح", dEn:"Doors open to patients.", dAr:"استقبال المرضى." }
+  ];
+  let lang = 'en';
+  try { if (localStorage.getItem('sikentif-lang') === 'ar') lang = 'ar'; } catch(e) {}
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function fmtDate(iso, ar){
+    const d = new Date(iso + 'T12:00:00');
+    try {
+      const g = new Intl.DateTimeFormat(ar ? 'ar-SA-u-ca-gregory-nu-latn' : 'en-GB', {day:'numeric', month:'long', year:'numeric'}).format(d);
+      const h = new Intl.DateTimeFormat(ar ? 'ar-SA-u-ca-islamic-umalqura-nu-latn' : 'en-u-ca-islamic-umalqura', {day:'numeric', month:'long', year:'numeric'}).format(d);
+      return ar ? (h + ' · ' + g) : (g + ' · ' + h);
+    } catch(e) { return iso; }
+  }
+
+  function renderDynamic(ar){
+    // Stage indicator (hero)
+    document.querySelectorAll('.js-stages').forEach(el => {
+      el.innerHTML = STAGES.map((s,i) => {
+        const cls = i < SITE.stage ? 'done' : (i === SITE.stage ? 'current' : '');
+        const tag = i === SITE.stage ? (ar ? 'المرحلة الحالية' : 'Current') : (i === SITE.stage + 1 ? (ar ? 'التالية' : 'Next') : '');
+        return '<div class="stage ' + cls + '"><i></i><small>' + tag + '</small><b>' + esc(ar ? s.ar : s.en) + '</b></div>';
+      }).join('');
+    });
+    document.querySelectorAll('.js-stage-note').forEach(el => {
+      const date = SITE.openingDate ? fmtDate(SITE.openingDate, ar) : (ar ? 'يُعلن لاحقًا' : 'to be announced');
+      const st = STAGES[SITE.stage] || STAGES[0];
+      el.innerHTML = '<span>' + (ar ? '<b>المرحلة الحالية:</b> ' : '<b>Current stage:</b> ') + esc(ar ? st.ar : st.en) + '</span><span>' + (ar ? '<b>موعد الافتتاح:</b> ' : '<b>Opening date:</b> ') + esc(date) + '</span>';
+    });
+    // Timeline lists
+    document.querySelectorAll('.js-tl').forEach(el => {
+      el.innerHTML = STAGES.map((s,i) => {
+        const cls = i < SITE.stage ? 'done' : (i === SITE.stage ? 'current' : '');
+        const tag = i < SITE.stage ? (ar ? 'مكتملة' : 'Complete') : i === SITE.stage ? (ar ? 'المرحلة الحالية' : 'Current stage') : (i === SITE.stage + 1 ? (ar ? 'التالية' : 'Next') : '');
+        return '<li class="' + cls + '"><small>' + tag + '</small><b>' + esc(ar ? s.ar : s.en) + '</b><p>' + esc(ar ? s.dAr : s.dEn) + '</p></li>';
+      }).join('');
+    });
+    // News
+    document.querySelectorAll('.js-news').forEach(el => {
+      const lim = +el.dataset.limit || SITE.updates.length;
+      el.innerHTML = SITE.updates.slice(0, lim).map(u =>
+        '<li><time datetime="' + esc(u.date) + '">' + esc(fmtDate(u.date, ar)) + '</time><b>' + esc(ar ? u.ar : u.en) + '</b><p>' + esc(ar ? u.arText : u.enText) + '</p></li>'
+      ).join('');
+    });
+    // Site values
+    document.querySelectorAll('.js-site').forEach(el => {
+      const v = SITE[el.dataset.k] || '';
+      el.innerHTML = '<bdi dir="ltr">' + esc(v) + '</bdi>' + (el.classList.contains('js-copy') ? ' <button type="button" class="copy">' + (ar ? 'نسخ' : 'Copy') + '</button>' : '');
+    });
+    // National address
+    document.querySelectorAll('.js-na').forEach(el => { el.textContent = SITE.nationalAddress[el.dataset.k] || (ar ? 'يُعلن لاحقًا' : 'TBA'); });
+    // Location status once announced
+    if (SITE.district) {
+      const d = ar ? (SITE.districtAr || SITE.district) : SITE.district;
+      document.querySelectorAll('.js-loc-status').forEach(el => { el.className = 'st confirmed js-loc-status'; el.textContent = (ar ? 'حي ' : '') + d + (ar ? '، الرياض' : ', Riyadh'); });
+    }
+    document.querySelectorAll('.js-maps').forEach(a => { if (SITE.mapsUrl) { a.href = SITE.mapsUrl; a.hidden = false; } });
+    document.querySelectorAll('.js-moh').forEach(el => el.hidden = !SITE.mohLicence);
+    document.querySelectorAll('.yr').forEach(y => y.textContent = new Date().getFullYear());
+  }
+
+  const i18n = [...document.querySelectorAll('[data-ar]')];
+  i18n.forEach(el => { el.dataset.en = el.innerHTML; });
+  const ariaEls = [...document.querySelectorAll('[data-ar-aria]')];
+  ariaEls.forEach(el => { el.dataset.enAria = el.getAttribute('aria-label'); });
+  const phEls = [...document.querySelectorAll('[data-ar-ph]')];
+  phEls.forEach(el => { el.dataset.enPh = el.getAttribute('placeholder'); });
+  let current = null;
+  function setLang(l){
+    lang = l; const ar = l === 'ar';
+    app.setAttribute('dir', ar ? 'rtl' : 'ltr');
+    app.setAttribute('lang', l);
+    document.documentElement.setAttribute('lang', l);
+    i18n.forEach(el => { el.innerHTML = ar ? el.dataset.ar : el.dataset.en; });
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      const on = b.dataset.lang === l;
+      b.setAttribute('aria-pressed', on);
+      b.setAttribute('aria-label', b.dataset.lang === 'ar' ? 'العربية — التبديل إلى العربية' : 'English — switch to English');
+    });
+    ariaEls.forEach(el => el.setAttribute('aria-label', ar ? el.dataset.arAria : el.dataset.enAria));
+    phEls.forEach(el => el.setAttribute('placeholder', ar ? el.dataset.arPh : el.dataset.enPh));
+    setTitle();
+    renderDynamic(ar);
+    try { localStorage.setItem('sikentif-lang', l); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-switch button').forEach(b => b.addEventListener('click', () => { if (b.dataset.lang !== lang) setLang(b.dataset.lang); }));
+  const TITLES = { home:['Private hospital in Riyadh','مستشفى خاص في الرياض'], about:['About','عن سيكنتيف'], services:['Planned services','الخدمات المخطط لها'], patients:['Patient information','معلومات المرضى'], updates:['Updates','المستجدات'], careers:['Careers','الوظائف'], partners:['Technology partners','شركاء التقنية'], contact:['Contact','تواصل معنا'], privacy:['Privacy Policy','سياسة الخصوصية'], terms:['Terms of Use','شروط الاستخدام'], cookies:['Cookie Policy','سياسة ملفات تعريف الارتباط'], accessibility:['Accessibility','إمكانية الوصول'], disclaimer:['Medical disclaimer','إخلاء المسؤولية الطبية'] };
+  function setTitle(){ const t = TITLES[current || 'home'] || TITLES.home; document.title = lang === 'ar' ? (t[1] + ' | مستشفى سيكنتيف') : (t[0] + ' | Sikentif Hospital'); }
+  document.querySelector('.skip').addEventListener('click', e => { e.preventDefault(); const m = document.getElementById('view-' + (current || 'home')); m.setAttribute('tabindex','-1'); m.focus(); });
+
+  // Copy buttons
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.copy'); if (!b) return;
+    const txt = b.parentElement.querySelector('bdi').textContent;
+    const done = () => { const o = b.textContent; b.textContent = lang === 'ar' ? 'تم النسخ' : 'Copied'; setTimeout(() => b.textContent = o, 1400); };
+    try { navigator.clipboard.writeText(txt).then(done, () => {}); } catch(err) {}
+  });
+
+  // Partner form link
+  const formReady = !/REPLACE/.test(SITE.partnerFormUrl);
+  document.querySelectorAll('[data-form-link]').forEach(a => {
+    a.href = formReady ? SITE.partnerFormUrl : '#partners';
+    if (!formReady) {
+      a.removeAttribute('target');
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const scope = a.closest('.apply-card, .page-hero');
+        const n = (scope && scope.querySelector('.js-form-notice')) || document.querySelector('.pp-hero .js-form-notice');
+        document.querySelectorAll('.js-form-notice').forEach(x => x.hidden = x !== n);
+        n.hidden = false; n.scrollIntoView({block:'center', behavior:'smooth'});
+      });
+    }
+  });
+
+  // Mobile sticky questionnaire button: hide while the hero button is on screen
+  (function(){
+    const heroBtn = document.querySelector('.pp-hero [data-form-link]'), bar = document.querySelector('.pp-sticky');
+    if (!heroBtn || !bar || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(es => es.forEach(e => bar.classList.toggle('is-hidden', e.isIntersecting))).observe(heroBtn);
+  })();
+
+  // Routing: bare hash tokens → [view, anchor]
+  const VIEWS = ['home','about','services','patients','updates','careers','partners','contact','privacy','terms','cookies','accessibility','disclaimer'];
+  const ANCHORS = {
+    register:'home', location:'home', journey:'home', what:'home', 'home-services':'home',
+    story:'about', values:'about', quality:'about', leadership:'about',
+    'svc-list':'services', specialties:'services', digital:'services',
+    'need-care':'patients', insurance:'patients', visit:'patients', visitor:'patients', faqs:'patients',
+    sharing:'updates', news:'updates', media:'updates',
+    working:'careers', talent:'careers', fraud:'careers',
+    partnerships:'partners', partner:'partners', 'pp-prep':'partners', 'pp-topics':'partners', 'pp-faq':'partners', 'other-partners':'partners'
+  };
+  function route(){
+    let h = location.hash.replace('#','') || 'home';
+    let view = VIEWS.includes(h) ? h : (ANCHORS[h] || 'home');
+    let anchor = VIEWS.includes(h) ? null : (ANCHORS[h] ? h : null);
+    if (h === 'partnerships' || h === 'partner') anchor = null;
+    const changed = view !== current;
+    VIEWS.forEach(v => { const el = document.getElementById('view-' + v); if (el) el.hidden = v !== view; });
+    const page = document.getElementById('view-' + view).dataset.page;
+    document.querySelectorAll('.nav a').forEach(a => { if (a.dataset.view === page) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    current = view; setTitle();
+    const target = anchor && document.getElementById(anchor);
+    if (target) requestAnimationFrame(() => target.scrollIntoView({behavior: changed ? 'auto' : 'smooth'}));
+    else window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', route);
+
+  // Mobile menu
+  const btn = document.getElementById('menuBtn'), mnav = document.getElementById('mobileNav');
+  btn.addEventListener('click', () => { const open = mnav.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
+  mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mnav.classList.remove('open'); btn.setAttribute('aria-expanded', false); }));
+
+  // Pre-select interests / subjects
+  document.querySelectorAll('.js-interest').forEach(a => a.addEventListener('click', () => {
+    const v = a.dataset.interest;
+    const box = document.querySelector('#regForm input[name=topic][value="' + v + '"]');
+    if (box) box.checked = true;
+    if (v === 'insurance') { const p = document.querySelector('#regForm input[name=interest][value=patient]'); if (p) p.checked = true; setTimeout(() => document.getElementById('r-insurer').focus({preventScroll:true}), 400); }
+  }));
+  document.addEventListener('click', e => { const a = e.target.closest('.js-subject'); if (!a) return; document.getElementById('c-subject').value = a.dataset.subject; applySubject(); });
+  document.querySelectorAll('.js-form-jump').forEach(a => a.addEventListener('click', e => { e.preventDefault(); const f = document.getElementById('contactForm'); f.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(() => document.getElementById('c-name').focus({preventScroll:true}), 400); }));
+
+  // ---------- Form validation (front-end; repeat on the server) ----------
+  const toLatin = v => v.replace(/[٠-٩]/g, d => d.charCodeAt(0) - 0x0660).replace(/[۰-۹]/g, d => d.charCodeAt(0) - 0x06F0);
+  const clean = v => toLatin(v).replace(/[\s\-()]/g, '');
+  const isSaudiMobile = v => /^(?:\+966|00966|0)?5\d{8}$/.test(clean(v));
+  const isSaudiLand = v => /^(?:\+966|00966|0)?1\d{8}$/.test(clean(v));
+  const isIntl = v => /^(?:\+|00)\d{8,15}$/.test(clean(v));
+  const RULES = {
+    name: v => /^[\p{L}\p{M}\s'’\-]{2,100}$/u.test(v),
+    email: v => v.length <= 254 && /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$/.test(v),
+    mobile: isSaudiMobile,
+    'mobile-intl': v => isSaudiMobile(v) || isIntl(v),
+    phone: v => isSaudiMobile(v) || isSaudiLand(v) || isIntl(v),
+    url: v => /^https:\/\/[^\s.]+\.[^\s]+$/.test(v),
+    cr: v => /^\d{10}$/.test(clean(v)),
+    message: v => v.length >= 10 && v.length <= 2000
+  };
+  document.querySelectorAll('input[type=tel], input[data-rule=cr]').forEach(inp => inp.addEventListener('input', () => { const v = toLatin(inp.value); if (v !== inp.value) inp.value = v; }));
+  document.querySelectorAll('.err').forEach(e => e.setAttribute('aria-live','polite'));
+
+  function isRequired(inp, form){
+    if (inp.dataset.requiredIf){ const [id, vals] = inp.dataset.requiredIf.split(':'); const c = form.querySelector('#' + id); return !!c && vals.split(',').includes(c.value); }
+    return inp.required;
+  }
+  function fieldValid(inp, form){
+    if (inp.closest('[hidden]') || inp.closest('.hp')) return true;
+    const req = isRequired(inp, form);
+    if (inp.type === 'checkbox') return !req || inp.checked;
+    if (inp.type === 'file'){ const f = inp.files && inp.files[0]; if (!f) return !req; const ext = (inp.accept || '.pdf,.doc,.docx').split(',').some(x => f.name.toLowerCase().endsWith(x.trim())); return ext && f.size <= (+inp.dataset.maxMb || 5) * 1048576; }
+    const v = (inp.value || '').trim();
+    if (!v) return !req;
+    const rule = RULES[inp.dataset.rule];
+    return rule ? rule(v) : true;
+  }
+  function reference(){ return 'SKT-' + new Date().getFullYear() + '-' + String(Math.floor(Math.random() * 100000)).padStart(5, '0'); }
+  function daysText(n, ar){ return ar ? (n === 1 ? 'يوم عمل واحد' : n === 2 ? 'يومَي عمل' : (n <= 10 ? n + ' أيام عمل' : n + ' يوم عمل')) : (n + ' business day' + (n === 1 ? '' : 's')); }
+  function contactThanks(subject, ref){
+    const ar = lang === 'ar', d = SITE.responseDays || {};
+    if (subject === 'partners') return ar ? 'تم استلام نبذة شركتك، وسنتواصل معك خلال ' + daysText(d.partners || 10, true) + ' في حال وجود حاجة مناسبة. رقم المرجع: ' + ref + '.' : "We've received your introduction and will contact you within " + daysText(d.partners || 10) + ' if there is a relevant need. Your reference is ' + ref + '.';
+    if (subject === 'media') return ar ? 'سيرد فريقنا الإعلامي خلال ' + daysText(d.media || 2, true) + '. رقم المرجع: ' + ref + '.' : 'Our media team will reply within ' + daysText(d.media || 2) + '. Your reference is ' + ref + '.';
+    return ar ? 'سنرد خلال ' + daysText(d.general || 5, true) + '، ورقم المرجع هو ' + ref + '.' : "We'll reply within " + daysText(d.general || 5) + '. Your reference is ' + ref + '.';
+  }
+
+  // Contact form: show the fields for the chosen subject
+  const cForm = document.getElementById('contactForm'), cSubject = document.getElementById('c-subject');
+  function applySubject(){
+    const v = cSubject.value;
+    cForm.querySelectorAll('[data-group]').forEach(g => g.hidden = g.dataset.group !== v);
+    cForm.querySelectorAll('[data-hide-for]').forEach(g => g.hidden = g.dataset.hideFor.split(',').includes(v));
+    cForm.querySelectorAll('.req-if').forEach(i => i.hidden = !['partners','media'].includes(v));
+    const lbl = cForm.querySelector('.js-msg-label');
+    if (lbl){ const map = { partners:['Short introduction','نبذة مختصرة'], media:['Details','التفاصيل'] }; const t = map[v] || ['Message','الرسالة']; lbl.dataset.en = t[0]; lbl.dataset.ar = t[1]; lbl.textContent = lang === 'ar' ? t[1] : t[0]; }
+    cSubject.closest('.field').classList.remove('invalid');
+  }
+  cSubject.addEventListener('change', applySubject);
+  // Careers: SCFHS question for clinical areas
+  const tArea = document.getElementById('t-area');
+  tArea.addEventListener('change', () => { document.querySelectorAll('[data-area-group="clinical"]').forEach(g => g.hidden = !['physicians','nursing','allied'].includes(tArea.value)); });
+
+  document.querySelectorAll('.js-form').forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const hp = form.querySelector('.hp input');
+      let firstBad = null;
+      form.querySelectorAll('input:not([type=checkbox]):not([type=radio]), select, textarea, input[type=checkbox][required]').forEach(inp => {
+        if (inp.closest('.hp')) return;
+        const ok = fieldValid(inp, form);
+        const f = inp.closest('.field'); if (f) f.classList.toggle('invalid', !ok);
+        if (ok) inp.removeAttribute('aria-invalid'); else inp.setAttribute('aria-invalid','true');
+        if (!ok && !firstBad) firstBad = inp;
+      });
+      form.querySelectorAll('fieldset[data-min]').forEach(fs => {
+        const ok = fs.querySelectorAll('input:checked').length >= +fs.dataset.min;
+        fs.classList.toggle('invalid', !ok);
+        if (!ok && !firstBad) firstBad = fs.querySelector('input');
+      });
+      if (firstBad){ firstBad.focus(); return; }
+      // TODO: send to the backend / CRM here; on failure show .send-err instead of the success state.
+      if (form.id === 'contactForm'){ const m = form.querySelector('.js-thanks-msg'); m.textContent = contactThanks(cSubject.value, reference()); }
+      form.querySelector('.form-body').hidden = true;
+      const t = form.querySelector('.thanks'); t.hidden = false; t.focus();
+      if (hp && hp.value) return; // bot: show success, send nothing
+    });
+    form.querySelectorAll('input,select,textarea').forEach(inp => inp.addEventListener('input', () => { const f = inp.closest('.field'); if (f) f.classList.remove('invalid'); inp.removeAttribute('aria-invalid'); }));
+    form.querySelectorAll('input[type=checkbox]').forEach(inp => inp.addEventListener('change', () => { const fs = inp.closest('fieldset'); if (fs) fs.classList.remove('invalid'); }));
+  });
+
+  setLang(lang);
+  route();
+})();
+</script>
+
+</body></html>
